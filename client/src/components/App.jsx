@@ -13,8 +13,8 @@ class App extends React.Component {
         this.fetchPhotos = this.fetchPhotos.bind(this);
     }
 
-    componentDidMount() {
-        this.fetchPhotos();
+    componentDidMount(listingId) {
+        this.fetchPhotos(listingId);
     }
     
     fetchPhotos(listingId) {

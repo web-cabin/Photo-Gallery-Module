@@ -16,6 +16,7 @@ const insertIntoDb = () => {
     for (let i = randomIndex; i < randomIndex + randomNumOfPhotos; i++) {
       arrayOfURLs.push(`https://photogalleryproject.s3.us-east-2.amazonaws.com/image${i}.jpeg`);
     }
+    arrayOfURLs = arrayOfURLs.reduce((acc, val) => acc.concat(val), []).join();
 
     let newPhotos = new database.PhotoGallery({
       id: index,
