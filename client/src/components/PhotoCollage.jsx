@@ -12,7 +12,30 @@ const ImageOne = styled.img`
     width: 684px; 
     box-sizing: border-box;
     cursor: pointer;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+
+    ${ImageOne}:hover {
+        transform: scale(0.9);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        -ms-transform: scale(1.2); 
+        transform: scale(1.2)
+    }
 `;
+
+const ContainerOne = styled.div`
+    &:hover ${ImageOne} {
+        display: none;
+    }
+`;
+
+
 
 const ImageTwo = styled.img`
     display: inline-block;
@@ -71,7 +94,9 @@ const ImageFive = styled.img`
 const PhotoCollage = (props) => {
     return (
         <div>
+        <ContainerOne>
         <ImageOne src="https://api.adorable.io/avatars/285/abott@adorable.png" />
+        </ContainerOne>
         <ImageTwo src="https://api.adorable.io/avatars/285/abott@adorable.png" />
         <ImageThree src="https://api.adorable.io/avatars/285/abott@adorable.png" />
         <ImageFour src="https://api.adorable.io/avatars/285/abott@adorable.png" />
