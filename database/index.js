@@ -1,19 +1,23 @@
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://localhost/photogallery', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/photos', { useNewUrlParser: true });
 
-// const PhotoSchema = new mongoose.Schema({
-//   id: Number,
-//   listing_id: Number,
-//   photo_url: String,
-//   desription: String,
-// });
+let PhotoSchema = new mongoose.Schema({
+  id: 'Number',
+  listing_id: 'Number',
+  photo_url: 'String',
+  description: 'String',
+}, { collection: 'photos' });
 
-// const PhotoGallery = mongoose.model('PhotoGallery', PhotoSchema);
+let PhotoGallery = mongoose.model('PhotoGallery', PhotoSchema);
 
-// console.log('Connected to Mongoose');
+console.log('Connected to Mongoose');
+
+//use a while loop and then use index to track 
+//loop through 4 times to get 100 and have a row
 
 
-// module.exports = {
-//   PhotoGallery
-// };
+module.exports = {
+  PhotoSchema: PhotoSchema,
+  PhotoGallery: PhotoGallery,
+}
