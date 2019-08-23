@@ -7,22 +7,29 @@ const faker = require('faker');
 //loop through 4 times to get 100 and have a row 
 const insertIntoDb = () => {
   let index = 1; 
-  let randomSentence = faker.lorem.sentence();
-
+  let randomSentence = faker.lorem.sentence(); 
+  
   while (index < 101) {
+    let randomIndex = Math.floor(Math.random() * Math.floor(100));
+    let randomNumOfPhotos = Math.floor(Math.random() * Math.floor(25));
+    let arrayOfURLs = [];
+    for (let i = randomIndex; i < randomIndex + randomNumOfPhotos; i++) {
+      arrayOfURLs.push(`https://photogalleryproject.s3.us-east-2.amazonaws.com/image${i}.jpeg`);
+    }
+
     let newPhotos = new database.PhotoGallery({
       id: index,
       listing_id: index,
-      photo_url: `https://photogalleryproject.s3.us-east-2.amazonaws.com/image${index}.jpeg`,
+      photo_url: arrayOfURLs,
       description: randomSentence,
     });
     database.PhotoGallery.create({
-        id: index,
-        listing_id: index,
-        photo_url: `https://photogalleryproject.s3.us-east-2.amazonaws.com/image${index}.jpeg`,
-        description: randomSentence,
+      id: index,
+      listing_id: index,
+      photo_url: arrayOfURLs,
+      description: randomSentence,
     }, function (err, newPhotos) {
-        if (err) return handleError(err);
+        if (err) console.log(err);
     });
     index++;    
     console.log(index);
