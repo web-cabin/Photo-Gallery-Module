@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import PhotoCollage from '../client/src/components/PhotoCollage.jsx';
 import PhotoCarousel from '../client/src/components/PhotoCarousel';
 import PhotoSlideShow from '../client/src/components/PhotoSlideShow';
+import Share from '../client/src/components/Share';
 
 
 //photo collage should render 5 images onto the page 
@@ -25,13 +26,25 @@ describe('<PhotoCarousel />', () => {
 });
 //photoslideshow should render images on the page dependent on the listing id and should match photo carousel
 describe('<PhotoSlideShow />', () => {
-    it('renders images on the page taht matches the photos in the carousel', () => {
-        
+    it('renders images on the page that matches the photos in the carousel', () => {
+
     });
 });
 
 //save should be clickable
 //share should be clickable
+describe('<Share />', () => {
+    it('should call function when button is clicked', () => {
+        const button = shallow(<Button name='share-button' handleClick={func} />)
+        button.simulate('click');
+        expect(func).toHaveBeenCalled();
+    });
+
+    it('should render correctly', () => {
+        const button = shallow(<Button name='share-button' />);
+        expect(button).toMatchSnapshot();
+    });
+})
 //view photos should be clickable 
 
 //App should render 6 components 
