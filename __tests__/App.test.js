@@ -5,6 +5,7 @@ import PhotoCarouselThumbnails from '../client/src/components/PhotoCarouselThumb
 import PhotoSlideShow from '../client/src/components/PhotoSlideShow';
 import Share from '../client/src/components/Share';
 import ViewPhotos from '../client/src/components/ViewPhotos.jsx';
+=======
 
 
 //photo collage should render 5 images onto the page 
@@ -22,9 +23,9 @@ describe('<PhotoCollage />', () => {
 describe('<PhotoCarouselThumbnails />', () => {
     it('renders random number of pages onto page dependent on the listing id', () => {
         const wrapper = shallow(<PhotoCarouselThumbnails photo={photo} />);
-        expect(wrapper.containsMatchingElement(<img src="beachHome.jpg" />)).toBe(true)
-    });
-});
+=======
+
+     
 //photoslideshow should render images on the page dependent on the listing id and should match photo carousel
 describe('<PhotoSlideShow />', () => {
     it('renders images on the page that matches the photos in the carousel', () => {
@@ -61,5 +62,7 @@ describe('<ViewPhotos />', () => {
         expect(button).toMatchSnapshot();
     });
 })
+=======
+//view photos should be clickable 
 
 //App should render 6 components 

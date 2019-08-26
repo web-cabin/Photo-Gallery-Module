@@ -5,16 +5,16 @@ const port = 3000;
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const database = require('../database/index.js');
+const mongoose = require('mongoose');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/api/displayphotos/:id', (req, res) => {
-    req.params.id
-  let randomIndex = Math.floor(Math.random() * Math.floor(100));
+    console.log(req.params.id);
 
-  database.find({ index: { $gte: randomIndex }}, (err, docs) => {
+  database.PhotoGallery.find({ listing_id: `${req.params.id}`}, (err, docs) => {
     if (err) {
       throw err; 
     } else {
