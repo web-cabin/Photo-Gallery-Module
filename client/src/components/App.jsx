@@ -1,6 +1,7 @@
 import React from 'react';
 import PhotoCollage from './PhotoCollage.jsx';
 import axios from 'axios';
+import PhotoSlideShow from './PhotoSlideShow.jsx';
 
 class App extends React.Component {
     
@@ -33,7 +34,12 @@ class App extends React.Component {
 
     render() {
         return (
-            <PhotoCollage />
+            <div className="container">
+                {/* <PhotoCollage /> */}
+                <div>
+                <PhotoSlideShow />
+                </div>
+            </div>
         );
     }
 }

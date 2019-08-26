@@ -95,12 +95,12 @@ const PhotoCollage = (props) => {
     return (
         <div>
         <ContainerOne>
-        <ImageOne src="https://api.adorable.io/avatars/285/abott@adorable.png" />
+        <ImageOne src="https://photogalleryproject.s3.us-east-2.amazonaws.com/image1.jpeg" />
         </ContainerOne>
-        <ImageTwo src="https://api.adorable.io/avatars/285/abott@adorable.png" />
-        <ImageThree src="https://api.adorable.io/avatars/285/abott@adorable.png" />
-        <ImageFour src="https://api.adorable.io/avatars/285/abott@adorable.png" />
-        <ImageFive src="https://api.adorable.io/avatars/285/abott@adorable.png" />
+        <ImageTwo src="https://photogalleryproject.s3.us-east-2.amazonaws.com/image2.jpeg" />
+        <ImageThree src="https://photogalleryproject.s3.us-east-2.amazonaws.com/image3.jpeg" />
+        <ImageFour src="https://photogalleryproject.s3.us-east-2.amazonaws.com/image4.jpeg" />
+        <ImageFive src="https://photogalleryproject.s3.us-east-2.amazonaws.com/image5.jpeg" />
 
         </div>
     );
