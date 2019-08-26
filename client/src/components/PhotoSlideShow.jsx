@@ -63,6 +63,20 @@ const BackArrow = styled.div`
     border-radius: 15px;
   `;
 
+  const Description = styled.div`
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 15px;
+    font-weight: 325;
+    line-height: 1.43;
+    color: #484848;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 165px;
+    top: 40%;
+  `;
+
 class PhotoSlideShow extends React.Component {
     constructor(props) {
       super(props);
@@ -137,6 +151,7 @@ class PhotoSlideShow extends React.Component {
       <LeftArrow goToPrevSlide={this.goToPrevSlide} />
 
       <RightArrow goToNextSlide={this.goToNextSlide}/> 
+      <DescriptionBox></DescriptionBox>
       </div>
       );
     }
@@ -169,6 +184,13 @@ const Slide = ({ image }) => {
     return (
       <NextArrow onClick={props.goToNextSlide}>
       </NextArrow>
+    );
+  }
+
+  const DescriptionBox = (props) => {
+    return (
+      <Description>Small house in Paris Center 5p
+      </Description>
     );
   }
 
