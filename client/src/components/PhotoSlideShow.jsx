@@ -14,6 +14,16 @@ const SliderContainer = styled.div`
 
 // height: 500px;
 
+const ThumbnailContainer = styled.div`
+  display: flex;
+  max-width: 252px;
+  height: 60px;
+  white-space: nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: auto;
+`;
+
 const SliderWrapper = styled.div`
   position: relative;
   height: 100%;
@@ -153,6 +163,9 @@ class PhotoSlideShow extends React.Component {
 
       <RightArrow goToNextSlide={this.goToNextSlide}/> 
       <DescriptionBox></DescriptionBox>
+      <ThumbnailContainer>
+      <ThumbnailGallery images={this.state.images} />
+      </ThumbnailContainer>
       </div>
       );
     }
