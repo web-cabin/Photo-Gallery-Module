@@ -91,17 +91,16 @@ const ImageFive = styled.img`
     cursor: pointer;
 `;
 
-const PhotoCollage = (props) => {
+const PhotoCollage = ({ photos }) => {
     return (
         <div>
         <ContainerOne>
-        <ImageOne src="https://photogalleryproject.s3.us-east-2.amazonaws.com/image1.jpeg" />
+        <ImageOne src={`${photos[0]}`} />
         </ContainerOne>
-        <ImageTwo src="https://photogalleryproject.s3.us-east-2.amazonaws.com/image2.jpeg" />
-        <ImageThree src="https://photogalleryproject.s3.us-east-2.amazonaws.com/image3.jpeg" />
-        <ImageFour src="https://photogalleryproject.s3.us-east-2.amazonaws.com/image4.jpeg" />
-        <ImageFive src="https://photogalleryproject.s3.us-east-2.amazonaws.com/image5.jpeg" />
-
+        <ImageTwo src={`${photos[1]}`} />
+        <ImageThree src={`${photos[2]}`} />
+        <ImageFour src={`${photos[3]}`} />
+        <ImageFive src={`${photos[4]}`} />
         </div>
     );
 }

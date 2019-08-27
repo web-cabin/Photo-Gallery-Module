@@ -11,8 +11,10 @@ class App extends React.Component {
 
         this.state = {
             photos: [],
+            showSlideshow: false,
         }
         this.fetchPhotos = this.fetchPhotos.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -37,12 +39,18 @@ class App extends React.Component {
         })
     }
 
+    handleChange() {
+        this.setState({
+            showSlideshow: true,
+        })
+    }
+
     render() {
         return (
             <div className="container">
-                {/* <PhotoCollage /> */}
+                <PhotoCollage photos={this.state.photos} onChange={this.handleChange}/>
                 <div>
-                <PhotoSlideShow photos={this.state.photos}/>
+                    {this.state.showSlideshow && <PhotoSlideShow photos={this.state.photos} />}
                 </div>
             </div>
         );
