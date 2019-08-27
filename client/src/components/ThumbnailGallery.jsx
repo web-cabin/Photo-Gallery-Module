@@ -70,7 +70,7 @@ class ThumbnailGallery extends React.Component {
     // Exiting the method early if we are at the end of the images array.
     // We also want to reset currentIndex and translateValue, so we return
     // to the first image in the array.
-    if(this.state.currentIndex === this.props.images.length - 1) 
+    if(this.state.currentIndex === this.props.photos.length - 1) 
       return;
     
     // This will not run if we met the if condition above
@@ -108,7 +108,7 @@ class ThumbnailGallery extends React.Component {
                transition: 'transform ease-out 0.45s'
             }}>
           {
-              this.props.images.map((image, index) => (
+              this.props.photos.map((image, index) => (
               <Thumbnails image={image} key={index} handleClick={this.handleClick.bind(this, index)} />
             ))
           }

@@ -93,16 +93,6 @@ class PhotoSlideShow extends React.Component {
       super(props);
   
       this.state = {
-        images: [
-          "https://photogalleryproject.s3.us-east-2.amazonaws.com/image1.jpeg",
-          "https://photogalleryproject.s3.us-east-2.amazonaws.com/image2.jpeg",
-          "https://photogalleryproject.s3.us-east-2.amazonaws.com/image3.jpeg",
-          "https://photogalleryproject.s3.us-east-2.amazonaws.com/image4.jpeg",
-          "https://photogalleryproject.s3.us-east-2.amazonaws.com/image5.jpeg",
-          "https://photogalleryproject.s3.us-east-2.amazonaws.com/image6.jpeg",
-          "https://photogalleryproject.s3.us-east-2.amazonaws.com/image7.jpeg",
-          "https://photogalleryproject.s3.us-east-2.amazonaws.com/image8.jpeg"
-        ],
         currentIndex: 0,
         translateValue: 0
       }
@@ -125,7 +115,7 @@ class PhotoSlideShow extends React.Component {
       // Exiting the method early if we are at the end of the images array.
       // We also want to reset currentIndex and translateValue, so we return
       // to the first image in the array.
-      if(this.state.currentIndex === this.state.images.length - 1) {
+      if(this.state.currentIndex === this.props.photos.length - 1) {
         return this.setState({
           currentIndex: 0,
           translateValue: 0
@@ -144,6 +134,7 @@ class PhotoSlideShow extends React.Component {
     }
   
     render() {
+      console.log('rendering photoslideshow');
       return (
         <div>
         <SliderContainer>
@@ -152,8 +143,8 @@ class PhotoSlideShow extends React.Component {
               transition: 'transform ease-out 0.45s'
             }}> 
               {
-                this.state.images.map((image, i) => (
-                  <Slide key={i} image={image} />
+                this.props.photos.map((photo, i) => (
+                  <Slide key={i} photo={photo} />
                 ))
               }
           </SliderWrapper>
@@ -164,7 +155,7 @@ class PhotoSlideShow extends React.Component {
       <RightArrow goToNextSlide={this.goToNextSlide}/> 
       <DescriptionBox></DescriptionBox>
       <ThumbnailContainer>
-      <ThumbnailGallery images={this.state.images} />
+      <ThumbnailGallery photos={this.props.photos} />
       </ThumbnailContainer>
       </div>
       );
@@ -173,9 +164,9 @@ class PhotoSlideShow extends React.Component {
   
 
 
-const Slide = ({ image }) => {
+const Slide = ({ photo }) => {
     var styles = {
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${photo})`,
         backgroundSize:'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '50% 60%'
