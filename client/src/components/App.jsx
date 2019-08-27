@@ -14,16 +14,12 @@ class App extends React.Component {
         this.fetchPhotos = this.fetchPhotos.bind(this);
     }
 
-    componentDidMount(listingId) {
-        this.fetchPhotos(listingId);
+    componentDidMount() {
+        this.fetchPhotos();
     }
     
-    fetchPhotos(listingId) {
-        axios.get('/api/displayphotos', {
-            params: {
-                listing_id: listingId,
-            }
-        })
+    fetchPhotos() {
+        axios.get('/api/displayphotos/1')
         .then(function(response) {
             console.log(response);
         })

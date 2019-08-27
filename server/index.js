@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/api/displayphotos/:id', (req, res) => {
-    console.log(req.params.id);
+  console.log(req.params.id);
 
   database.PhotoGallery.find({ listing_id: `${req.params.id}`}, (err, docs) => {
     if (err) {
