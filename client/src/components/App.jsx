@@ -11,6 +11,7 @@ class App extends React.Component {
 
         this.state = {
             photos: [],
+            descriptions: [],
             showSlideshow: false,
         }
         this.fetchPhotos = this.fetchPhotos.bind(this);
@@ -27,10 +28,11 @@ class App extends React.Component {
             method: 'GET',
             success: (response) => {
                 // array.toString().split(',');
+                // console.log(response[0].description);
                 console.log(response);
-                response = response[0].photo_url.toString().split(',');
                 this.setState({
-                    photos: response,
+                    photos: response[0].photo_url.toString().split(','),
+                    descriptions: response[0].description,
                 });
             },
             error: (data) => {
@@ -47,10 +49,9 @@ class App extends React.Component {
 
 
     render() {
-
         return (
             <div className="container">
-                {this.state.showSlideshow? <PhotoSlideShow photos={this.state.photos} /> : <PhotoCollage photos={this.state.photos} renderCarousel={this.renderCarousel}/>}
+                {this.state.showSlideshow? <PhotoSlideShow photos={this.state.photos} descriptions={this.state.descriptions} /> : <PhotoCollage photos={this.state.photos} renderCarousel={this.renderCarousel}/>}
             </div>
         );
     }

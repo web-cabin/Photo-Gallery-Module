@@ -24,68 +24,84 @@ const SliderWrapper = styled.div`
   width: 100%;
 `;
 
+
 const BackArrow = styled.div`
-  height: 50px;
-  width: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f9f9f9;
-  cursor: pointer;
-  transition: transform ease-in .1s;
-  position: absolute;
-  top: 46%;
-  left: 60px;
-  z-index: 999;
-  color: #fff;
-  background-image: url('https://photogalleryproject.s3.us-east-2.amazonaws.com/backarrow.png');
-  `;
+height: 50px;
+width: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #f9f9f9;
+cursor: pointer;
+transition: transform ease-in .1s;
+position: absolute;
+top: 46%;
+left: 60px;
+z-index: 999;
+color: #fff;
+background-image: url('https://photogalleryproject.s3.us-east-2.amazonaws.com/backarrow.png');
+`;
 
-  const NextArrow = styled.div`
-  height: 50px;
-  width: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f9f9f9;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform ease-in .1s;
-  position: absolute;
-  top: 46%;
-  right: 435px;
-  z-index: 999;
-  color: #fff;
-  background-image: url('https://photogalleryproject.s3.us-east-2.amazonaws.com/nextarrow.png');
-  `;
-  
-  
-  const Slides = styled.div`
-    display: inline-block;
-    height: 525px;
-    width: 785px;
-    top: 30px;
-    border-radius: 15px;
-  `;
+const NextArrow = styled.div`
+height: 50px;
+width: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #f9f9f9;
+border-radius: 50%;
+cursor: pointer;
+transition: transform ease-in .1s;
+position: absolute;
+top: 46%;
+right: 435px;
+z-index: 999;
+color: #fff;
+background-image: url('https://photogalleryproject.s3.us-east-2.amazonaws.com/nextarrow.png');
+`;
 
-  const Description = styled.div`
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-    font-size: 15px;
-    font-weight: 325;
-    line-height: 1.43;
-    color: #484848;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 165px;
-    top: 40%;
-  `;
+
+const Slides = styled.div`
+display: inline-block;
+height: 525px;
+width: 785px;
+top: 30px;
+border-radius: 15px;
+`;
+
+const Description = styled.div`
+font-family: Roboto, Helvetica Neue, sans-serif;
+font-size: 15px;
+font-weight: 325;
+line-height: 1.43;
+color: #484848;
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+top: 150px;
+`;
+
+const DescriptionContainer = styled.div`
+  position: relative; 
+  max-width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin: 0 auto;
+  white-space: nowrap;
+  top: 200px;
+`;
+
+const DescriptionWrapper = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+`;
 
 class PhotoSlideShow extends React.Component {
-    constructor(props) {
+  constructor(props) {
       super(props);
-  
+      
       this.state = {
         currentIndex: 0,
         translateValue: 0
@@ -144,12 +160,22 @@ class PhotoSlideShow extends React.Component {
           </SliderWrapper>
             
         </SliderContainer>
-      <LeftArrow goToPrevSlide={this.goToPrevSlide} />
+         <LeftArrow goToPrevSlide={this.goToPrevSlide} />
 
-      <RightArrow goToNextSlide={this.goToNextSlide}/> 
-      <DescriptionBox></DescriptionBox>
-    
-      <ThumbnailGallery photos={this.props.photos} />
+         <RightArrow goToNextSlide={this.goToNextSlide}/> 
+
+         <ThumbnailGallery photos={this.props.photos} />
+
+      <DescriptionContainer>        
+      <DescriptionWrapper> 
+        {this.props.descriptions}
+      {/* {
+        this.props.descriptions.map((description, i) => {
+          <DescriptionList key={i} description={description} />
+        })
+      }  */}
+      </DescriptionWrapper>
+      </DescriptionContainer>
    
       </div>
       );
@@ -186,10 +212,9 @@ const Slide = ({ photo }) => {
     );
   }
 
-  const DescriptionBox = (props) => {
+  const DescriptionList = ({ description }) => {
     return (
-      <Description>Small house in Paris Center 5p
-      </Description>
+      <Description className="description">{description}</Description>
     );
   }
 

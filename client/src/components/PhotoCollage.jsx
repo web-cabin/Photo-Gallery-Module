@@ -8,8 +8,8 @@ const ImageOne = styled.img`
     transform: scale(1);
     opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    height: 456px;
-    width: 684px; 
+    height: 462px;
+    width: 720px; 
     box-sizing: border-box;
     cursor: pointer;
     -webkit-transition: all .5s ease;
@@ -17,6 +17,7 @@ const ImageOne = styled.img`
     -ms-transition: all .5s ease;
     -o-transition: all .5s ease;
     transition: all .5s ease;
+    border: solid 1px black;
 
     ${ImageOne}:hover {
         transform: scale(0.9);
@@ -44,10 +45,11 @@ const ImageTwo = styled.img`
     left: 50%;
     opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    height: 227.333px;
-    width: 341px; 
+    height: 239px;
+    width: 360px; 
     box-sizing: border-box;
     cursor: pointer;
+    border: solid 1px black;
 `;
 
 const ImageThree = styled.img`
@@ -57,10 +59,11 @@ const ImageThree = styled.img`
     right: 0%;
     opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    height: 227.333px;
-    width: 341px; 
+    height: 239px;
+    width: 360px; 
     box-sizing: border-box;
     cursor: pointer;
+    border: solid 1px black;
 `;
 
 const ImageFour = styled.img`
@@ -71,10 +74,11 @@ const ImageFour = styled.img`
     top: 31%;
     opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    height: 227.333px;
-    width: 341px; 
+    height: 239px;
+    width: 360px; 
     box-sizing: border-box;
     cursor: pointer;
+    border: solid 1px black;
 `;
 
 const ImageFive = styled.img`
@@ -85,10 +89,11 @@ const ImageFive = styled.img`
     top: 31%;
     opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    height: 227.333px;
-    width: 341px; 
+    height: 239px;
+    width: 360px; 
     box-sizing: border-box;
     cursor: pointer;
+    border: solid 1px black;
 `;
 
 const PhotoCollage = ({ photos, renderCarousel }) => {
