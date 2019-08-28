@@ -23,11 +23,11 @@ class App extends React.Component {
     
     fetchPhotos() {
         $.ajax({
-            url: '/api/displayphotos/1',
+            url: '/api/displayphotos/8',
             method: 'GET',
             success: (response) => {
                 // array.toString().split(',');
-                console.log(response[0].photo_url.toString().split(','));
+                console.log(response);
                 response = response[0].photo_url.toString().split(',');
                 this.setState({
                     photos: response,
@@ -51,10 +51,6 @@ class App extends React.Component {
         return (
             <div className="container">
                 {this.state.showSlideshow? <PhotoSlideShow photos={this.state.photos} /> : <PhotoCollage photos={this.state.photos} renderCarousel={this.renderCarousel}/>}
-                {/* <PhotoCollage photos={this.state.photos} renderCarousel={this.renderCarousel}/>
-                <div>
-                {this.state.showSlideshow && <PhotoSlideShow photos={this.state.photos} /> } 
-                </div> */}
             </div>
         );
     }

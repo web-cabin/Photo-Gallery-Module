@@ -6,7 +6,7 @@ let PhotoSchema = new mongoose.Schema({
   id: 'Number',
   listing_id: 'Number',
   photo_url: [String],
-  description: 'String',
+  description: [String],
 }, { collection: 'photos' });
 
 let PhotoGallery = mongoose.model('PhotoGallery', PhotoSchema);
