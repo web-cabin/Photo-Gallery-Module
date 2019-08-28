@@ -14,7 +14,7 @@ class App extends React.Component {
             showSlideshow: false,
         }
         this.fetchPhotos = this.fetchPhotos.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        this.renderCarousel = this.renderCarousel.bind(this);
     }
 
     componentDidMount() {
@@ -39,19 +39,22 @@ class App extends React.Component {
         })
     }
 
-    handleChange() {
+    renderCarousel() {
         this.setState({
             showSlideshow: true,
-        })
+        });
     }
 
+
     render() {
+
         return (
             <div className="container">
-                <PhotoCollage photos={this.state.photos} onChange={this.handleChange}/>
+                {this.state.showSlideshow? <PhotoSlideShow photos={this.state.photos} /> : <PhotoCollage photos={this.state.photos} renderCarousel={this.renderCarousel}/>}
+                {/* <PhotoCollage photos={this.state.photos} renderCarousel={this.renderCarousel}/>
                 <div>
-                    {this.state.showSlideshow && <PhotoSlideShow photos={this.state.photos} />}
-                </div>
+                {this.state.showSlideshow && <PhotoSlideShow photos={this.state.photos} /> } 
+                </div> */}
             </div>
         );
     }

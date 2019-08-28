@@ -1,45 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// const ThumbnailContainer = styled.div`
-//     display: flex;
-//     max-width: 252px;
-//     height: 60px;
-//     white-space: nowrap;
-//     flex-direction: row;
-//     flex-wrap: nowrap;
-//     margin: 7px;
+// const OuterContainer = styled.div`
+//   position: relative; 
+//   max-width: 252px;
+//   overflow: hidden;
+//   margin: 0 auto;
+//   white-space: nowrap;
 // `;
 
-// display: flex;
-// margin: 0 auto;
-// overflow: hidden;
-// white-space: nowrap;
-// width: 785px;
-// float: left;
-// margin: 130px;
-// margin: 7px; 
-// overflow: hidden;
+const ThumbnailContainer = styled.div`
+    position: relative; 
+    max-width: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+    white-space: nowrap;
+    border: solid 1px blue;
+    top: 130px;
+`;
 
 const ThumbnailWrapper = styled.div`
     position: relative;
     height: 100%;
     width: 100%; 
+    border: solid 1px red;
 `;
 
 const Thumbnail = styled.div`
     display: inline-flex;
     height: 58px;
     width: 58px;
-    flex-basis: 80%;
-    flex: 1 0 15%;
-    margin-right: 20px;
-    position: relative;
     border-radius: 5px;
     margin: 7px;
     padding: 5px;
     top: 120px;
 `;
+
+// flex-basis: 80%;
+// flex: 1 0 15%;
+// margin-right: 20px;
+// position: relative;
 
 
 class ThumbnailGallery extends React.Component {
@@ -102,7 +102,7 @@ class ThumbnailGallery extends React.Component {
   render() {
     return (
       <div>
-          {/* <ThumbnailContainer> */}
+          <ThumbnailContainer>
            <ThumbnailWrapper style={{
                transform: `translateX(${this.state.translateValue}px)`,
                transition: 'transform ease-out 0.45s'
@@ -113,7 +113,7 @@ class ThumbnailGallery extends React.Component {
             ))
           }
           </ThumbnailWrapper>
-          {/* </ThumbnailContainer> */}
+          </ThumbnailContainer>
       </div>
     );
   }

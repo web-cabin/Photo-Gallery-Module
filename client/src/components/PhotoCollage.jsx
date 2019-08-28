@@ -91,16 +91,14 @@ const ImageFive = styled.img`
     cursor: pointer;
 `;
 
-const PhotoCollage = ({ photos }) => {
+const PhotoCollage = ({ photos, renderCarousel }) => {
     return (
         <div>
-        <ContainerOne>
-        <ImageOne src={`${photos[0]}`} />
-        </ContainerOne>
-        <ImageTwo src={`${photos[1]}`} />
-        <ImageThree src={`${photos[2]}`} />
-        <ImageFour src={`${photos[3]}`} />
-        <ImageFive src={`${photos[4]}`} />
+        <ImageOne src={`${photos[0]}`} onClick={() => renderCarousel()}/>
+        <ImageTwo src={`${photos[1]}`} onClick={() => renderCarousel()} />
+        <ImageThree src={`${photos[2]}`} onClick={() => renderCarousel()} />
+        <ImageFour src={`${photos[3]}`} onClick={() => renderCarousel()} />
+        <ImageFive src={`${photos[4]}`} onClick={() => renderCarousel()} />
         </div>
     );
 }
