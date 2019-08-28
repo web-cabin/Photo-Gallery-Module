@@ -99,11 +99,11 @@ const ImageFive = styled.img`
 const PhotoCollage = ({ photos, renderCarousel }) => {
     return (
         <div>
-        <ImageOne src={`${photos[0]}`} onClick={() => renderCarousel()}/>
-        <ImageTwo src={`${photos[1]}`} onClick={() => renderCarousel()} />
-        <ImageThree src={`${photos[2]}`} onClick={() => renderCarousel()} />
-        <ImageFour src={`${photos[3]}`} onClick={() => renderCarousel()} />
-        <ImageFive src={`${photos[4]}`} onClick={() => renderCarousel()} />
+        <ImageOne src={`${photos[0]}`} className="image" onClick={() => renderCarousel()}/>
+        <ImageTwo src={`${photos[1]}`} className="image" onClick={() => renderCarousel()} />
+        <ImageThree src={`${photos[2]}`} className="image" onClick={() => renderCarousel()} />
+        <ImageFour src={`${photos[3]}`} className="image" onClick={() => renderCarousel()} />
+        <ImageFive src={`${photos[4]}`} className="image" onClick={() => renderCarousel()} />
         </div>
     );
 }

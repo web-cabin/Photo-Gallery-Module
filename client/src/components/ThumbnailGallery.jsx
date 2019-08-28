@@ -26,7 +26,7 @@ const ThumbnailWrapper = styled.div`
     border: solid 1px red;
 `;
 
-const Thumbnail = styled.div`
+export const Thumbnail = styled.div`
     display: inline-flex;
     height: 58px;
     width: 58px;
@@ -47,7 +47,7 @@ class ThumbnailGallery extends React.Component {
     super(props);
 
     this.state = {
-      currentIndex: 0,
+      currentThumbnailIndex: 0,
       translateValue: 0,
     }
     this.goToPrevSlide = this.goToPrevSlide.bind(this);
@@ -57,11 +57,11 @@ class ThumbnailGallery extends React.Component {
   }
 
   goToPrevSlide() {
-    if(this.state.currentIndex === 0)
+    if(this.state.currentThumbnailIndex === 0)
       return;
     
     this.setState(prevState => ({
-      currentIndex: prevState.currentIndex - 1,
+      currentThumbnailIndex: prevState.currentThumbnailIndex - 1,
       translateValue: prevState.translateValue + this.thumbnailWidth()
     }))
   }
@@ -70,12 +70,12 @@ class ThumbnailGallery extends React.Component {
     // Exiting the method early if we are at the end of the images array.
     // We also want to reset currentIndex and translateValue, so we return
     // to the first image in the array.
-    if(this.state.currentIndex === this.props.photos.length - 1) 
+    if(this.state.currentThumbnailIndex === this.props.photos.length - 1) 
       return;
     
     // This will not run if we met the if condition above
     this.setState(prevState => ({
-      currentIndex: prevState.currentIndex + 1,
+      currentThumbnailIndex: prevState.currentThumbnailIndex + 1,
       translateValue: prevState.translateValue + -(this.thumbnailWidth())
     }));
   }
@@ -88,13 +88,13 @@ class ThumbnailGallery extends React.Component {
     var thumbnails = document.querySelectorAll('.thumbnail');
     let thumbnailsArray = (Array.prototype.slice.call(thumbnails));
     console.log(event);
-    if (event > this.state.currentIndex) {
+    if (event > this.state.currentThumbnailIndex) {
         this.goToNextSlide();
-    } else if (event < this.state.currentIndex) {
+    } else if (event < this.state.currentThumbnailIndex) {
         this.goToPrevSlide();
     }
     this.setState({
-        currentIndex: event,
+      currentThumbnailIndex: event,
     });
   }
 
@@ -120,7 +120,7 @@ class ThumbnailGallery extends React.Component {
 }
 
 
-const Thumbnails = ({ image, handleClick, index }) => {
+export const Thumbnails = ({ image, handleClick, index }) => {
     var styles = {
         backgroundImage: `url(${image})`,
         backgroundSize:'cover',

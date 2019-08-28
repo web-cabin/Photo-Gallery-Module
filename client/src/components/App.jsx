@@ -13,6 +13,7 @@ class App extends React.Component {
             photos: [],
             descriptions: [],
             showSlideshow: false,
+            index: 0,
         }
         this.fetchPhotos = this.fetchPhotos.bind(this);
         this.renderCarousel = this.renderCarousel.bind(this);

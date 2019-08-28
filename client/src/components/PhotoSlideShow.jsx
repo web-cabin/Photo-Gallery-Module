@@ -25,7 +25,7 @@ const SliderWrapper = styled.div`
 `;
 
 
-const BackArrow = styled.div`
+export const BackArrow = styled.div`
 height: 50px;
 width: 50px;
 display: flex;
@@ -42,7 +42,7 @@ color: #fff;
 background-image: url('https://photogalleryproject.s3.us-east-2.amazonaws.com/backarrow.png');
 `;
 
-const NextArrow = styled.div`
+export const NextArrow = styled.div`
 height: 50px;
 width: 50px;
 display: flex;
@@ -61,7 +61,7 @@ background-image: url('https://photogalleryproject.s3.us-east-2.amazonaws.com/ne
 `;
 
 
-const Slides = styled.div`
+export const Slides = styled.div`
 display: inline-block;
 height: 525px;
 width: 785px;
@@ -69,7 +69,7 @@ top: 30px;
 border-radius: 15px;
 `;
 
-const Description = styled.div`
+export const Description = styled.div`
 font-family: Roboto, Helvetica Neue, sans-serif;
 font-size: 15px;
 font-weight: 325;
@@ -164,7 +164,7 @@ class PhotoSlideShow extends React.Component {
 
          <RightArrow goToNextSlide={this.goToNextSlide}/> 
 
-         <ThumbnailGallery photos={this.props.photos} />
+         <ThumbnailGallery photos={this.props.photos} currentIndex={this.state.currentIndex} />
 
       <DescriptionContainer>        
       <DescriptionWrapper> 
@@ -184,7 +184,7 @@ class PhotoSlideShow extends React.Component {
   
 
 
-const Slide = ({ photo }) => {
+export const Slide = ({ photo }) => {
     var styles = {
         backgroundImage: `url(${photo})`,
         backgroundSize:'cover',
@@ -197,7 +197,7 @@ const Slide = ({ photo }) => {
   };
 
   
-  const LeftArrow = (props) => {
+export const LeftArrow = (props) => {
     return (
       <BackArrow onClick={props.goToPrevSlide}>
       </BackArrow>
@@ -205,19 +205,21 @@ const Slide = ({ photo }) => {
   }
   
   
-  const RightArrow = (props) => {
+export const RightArrow = (props) => {
     return (
-      <NextArrow onClick={props.goToNextSlide}>
+      <NextArrow className="button" onClick={props.goToNextSlide}>
       </NextArrow>
     );
   }
 
-  const DescriptionList = ({ description }) => {
+export const DescriptionList = ({ description }) => {
     return (
       <Description className="description">{description}</Description>
     );
   }
 
 
-export default PhotoSlideShow; 
+export default PhotoSlideShow;
+
+
 
