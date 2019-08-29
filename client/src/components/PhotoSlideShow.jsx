@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import ThumbnailGallery from './ThumbnailGallery.jsx';
 
-const SliderContainer = styled.div`
-  display: flex;
-  margin: 0 auto;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 785px;
-  float: left;
-  margin: 130px;
-`;
+// const SliderContainer = styled.div`
+//   display: flex;
+//   margin: 0 auto;
+//   overflow: hidden;
+//   white-space: nowrap;
+//   width: 785px;
+//   float: left;
+//   margin: 130px;
+// `;
 
 // height: 500px
 
@@ -69,34 +68,6 @@ top: 30px;
 border-radius: 15px;
 `;
 
-export const Description = styled.div`
-font-family: Roboto, Helvetica Neue, sans-serif;
-font-size: 15px;
-font-weight: 325;
-line-height: 1.43;
-color: #484848;
-display: flex;
-align-items: center;
-justify-content: center;
-position: absolute;
-top: 150px;
-`;
-
-const DescriptionContainer = styled.div`
-  position: relative; 
-  max-width: 300px;
-  height: 300px;
-  overflow: hidden;
-  margin: 0 auto;
-  white-space: nowrap;
-  top: 200px;
-`;
-
-const DescriptionWrapper = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
-`;
 
 class PhotoSlideShow extends React.Component {
   constructor(props) {
@@ -147,7 +118,6 @@ class PhotoSlideShow extends React.Component {
       console.log('rendering photoslideshow');
       return (
         <div>
-        <SliderContainer>
           <SliderWrapper style={{
               transform: `translateX(${this.state.translateValue}px)`,
               transition: 'transform ease-out 0.45s'
@@ -159,14 +129,13 @@ class PhotoSlideShow extends React.Component {
               }
           </SliderWrapper>
             
-        </SliderContainer>
          <LeftArrow goToPrevSlide={this.goToPrevSlide} />
 
          <RightArrow goToNextSlide={this.goToNextSlide}/> 
 
-         <ThumbnailGallery photos={this.props.photos} currentIndex={this.state.currentIndex} />
+         {/* <ThumbnailGallery photos={this.props.photos} currentIndex={this.state.currentIndex} /> */}
 
-      <DescriptionContainer>        
+      {/* <DescriptionContainer>        
       <DescriptionWrapper> 
         {this.props.descriptions}
       {/* {
@@ -174,8 +143,8 @@ class PhotoSlideShow extends React.Component {
           <DescriptionList key={i} description={description} />
         })
       }  */}
-      </DescriptionWrapper>
-      </DescriptionContainer>
+      {/* </DescriptionWrapper>
+      </DescriptionContainer> */} */}
    
       </div>
       );
@@ -212,11 +181,11 @@ export const RightArrow = (props) => {
     );
   }
 
-export const DescriptionList = ({ description }) => {
-    return (
-      <Description className="description">{description}</Description>
-    );
-  }
+// export const DescriptionList = ({ description }) => {
+//     return (
+//       <Description className="description">{description}</Description>
+//     );
+//   }
 
 
 export default PhotoSlideShow;

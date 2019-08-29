@@ -8,7 +8,7 @@ const ImageOne = styled.img`
     transform: scale(1);
     opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    height: 462px;
+    height: 478px;
     width: 720px; 
     box-sizing: border-box;
     cursor: pointer;

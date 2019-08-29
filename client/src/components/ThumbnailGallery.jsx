@@ -1,23 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// const OuterContainer = styled.div`
-//   position: relative; 
-//   max-width: 252px;
-//   overflow: hidden;
-//   margin: 0 auto;
-//   white-space: nowrap;
-// `;
 
-const ThumbnailContainer = styled.div`
-    position: relative; 
-    max-width: 300px;
-    overflow: hidden;
-    margin: 0 auto;
-    white-space: nowrap;
-    border: solid 1px blue;
-    top: 130px;
-`;
+// const ThumbnailContainer = styled.div`
+//     position: relative; 
+//     max-width: 300px;
+//     overflow: hidden;
+//     margin: 0 auto;
+//     white-space: nowrap;
+//     border: solid 1px blue;
+//     top: 130px;
+// `;
 
 const ThumbnailWrapper = styled.div`
     position: relative;
@@ -102,7 +95,6 @@ class ThumbnailGallery extends React.Component {
   render() {
     return (
       <div>
-          <ThumbnailContainer>
            <ThumbnailWrapper style={{
                transform: `translateX(${this.state.translateValue}px)`,
                transition: 'transform ease-out 0.45s'
@@ -113,7 +105,6 @@ class ThumbnailGallery extends React.Component {
             ))
           }
           </ThumbnailWrapper>
-          </ThumbnailContainer>
       </div>
     );
   }
