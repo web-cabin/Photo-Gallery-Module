@@ -133,9 +133,9 @@ class PhotoSlideShow extends React.Component {
               }
           </SliderWrapper>
             
-         <LeftArrow goToPrevSlide={this.props.goToPrevSlide} />
+         <LeftArrow goToPrevSlide={this.props.goToPrevSlide} index={this.props.index} handleClick={this.props.handleClick.bind(this)}/>
 
-         <RightArrow goToNextSlide={this.props.goToNextSlide}/> 
+         <RightArrow goToNextSlide={this.props.goToNextSlide} index={this.props.index} handleClick={this.props.handleClick.bind(this)}/> 
 
          {/* <ThumbnailGallery photos={this.props.photos} currentIndex={this.state.currentIndex} /> */}
 
@@ -170,17 +170,17 @@ export const Slide = ({ photo }) => {
   };
 
   
-export const LeftArrow = ({ goToPrevSlide }) => {
+export const LeftArrow = ({ handleClick, index }) => {
     return (
-      <BackArrow className="back-arrow" onClick={goToPrevSlide}>
+      <BackArrow className="back-arrow" onClick={() => handleClick(index - 1)} >
       </BackArrow>
     );
   }
   
   
-export const RightArrow = ({ goToNextSlide }) => {
+export const RightArrow = ({ handleClick, index }) => {
     return (
-      <NextArrow className="next-arrow" onClick={goToNextSlide}>
+      <NextArrow className="next-arrow"  onClick={() => handleClick(index + 1)} >
       </NextArrow>
     );
   }
