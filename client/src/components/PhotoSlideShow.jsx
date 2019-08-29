@@ -74,7 +74,6 @@ class PhotoSlideShow extends React.Component {
       super(props);
       
       this.state = {
-        currentIndex: 0,
         translateValue: 0
       }
       this.goToPrevSlide = this.goToPrevSlide.bind(this);

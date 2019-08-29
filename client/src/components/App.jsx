@@ -74,6 +74,7 @@ class App extends React.Component {
         }
         this.fetchPhotos = this.fetchPhotos.bind(this);
         this.renderCarousel = this.renderCarousel.bind(this);
+        this.handleIndexChange = this.handleIndexChange.bind(this);
     }
 
     componentDidMount() {
@@ -105,6 +106,12 @@ class App extends React.Component {
         });
     }
 
+    handleIndexChange(index) {
+        this.setState({
+            index: index,
+        })
+    }
+
 
     render() {
         return (
@@ -112,10 +119,10 @@ class App extends React.Component {
                 {this.state.showSlideshow? 
                 <div>
                 <ThumbnailContainer>
-                <ThumbnailGallery photos={this.state.photos} />
+                <ThumbnailGallery photos={this.state.photos} onChange={this.handleIndexChange} />
                 </ThumbnailContainer>
                 <SliderContainer>
-                <PhotoSlideShow photos={this.state.photos} descriptions={this.state.descriptions} />
+                <PhotoSlideShow photos={this.state.photos} descriptions={this.state.descriptions} onChange={this.handleIndexChange} />
                 </SliderContainer>
                 <DescriptionContainer>        
                     <DescriptionWrapper> 

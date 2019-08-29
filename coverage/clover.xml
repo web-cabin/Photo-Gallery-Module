@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1567048929364" clover="3.2.0">
-  <project timestamp="1567048929364" name="All files">
+<coverage generated="1567049298660" clover="3.2.0">
+  <project timestamp="1567049298660" name="All files">
     <metrics statements="68" coveredstatements="48" conditionals="12" coveredconditionals="2" methods="28" coveredmethods="15" elements="108" coveredelements="65" complexity="0" loc="68" ncloc="68" packages="1" files="3" classes="3"/>
     <file name="PhotoCollage.jsx" path="/Users/Wendy/hrsf122/Front End Capstone - AirBnB/client/src/components/PhotoCollage.jsx">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
