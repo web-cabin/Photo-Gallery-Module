@@ -6,7 +6,6 @@ const ThumbnailWrapper = styled.div`
     position: relative;
     height: 100%;
     width: 100%; 
-    border: solid 1px red;
 `;
 
 export const Thumbnail = styled.div`

@@ -15,7 +15,6 @@ const ThumbnailContainer = styled.div`
     margin: 0 auto;
     white-space: nowrap;
     float: right;
-    border: solid 1px blue;
     top: 130px;
     right: 60px;
 `;
@@ -30,18 +29,6 @@ const SliderContainer = styled.div`
   margin: 130px;
 `;
 
-export const Description = styled.div`
-font-family: Roboto, Helvetica Neue, sans-serif;
-font-size: 15px;
-font-weight: 325;
-line-height: 1.43;
-color: #484848;
-display: flex;
-align-items: center;
-justify-content: center;
-position: absolute;
-top: 200px;
-`;
 
 const DescriptionContainer = styled.div`
   position: relative;
@@ -49,16 +36,8 @@ const DescriptionContainer = styled.div`
   width: 300px;
   overflow: hidden;
   margin: 0 auto;
-  white-space: nowrap;
-  border: solid 1px blue; 
   top: 250px;
   right: 40px;
-`;
-
-const DescriptionWrapper = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
 `;
 
 
@@ -72,6 +51,7 @@ class App extends React.Component {
             photos: [],
             descriptions: [],
             currentPhoto: '',
+            currentDescription: '',
             showSlideshow: false,
             currentIndex: 0,
             translateSlideValue: 0,
@@ -79,7 +59,6 @@ class App extends React.Component {
         }
         this.fetchPhotos = this.fetchPhotos.bind(this);
         this.renderCarousel = this.renderCarousel.bind(this);
-        this.handleIndexChange = this.handleIndexChange.bind(this);
         this.goToPrevSlide = this.goToPrevSlide.bind(this);
         this.goToNextSlide = this.goToNextSlide.bind(this);
         this.slideWidth = this.slideWidth.bind(this);
@@ -116,12 +95,6 @@ renderCarousel() {
     });
 }
 
-handleIndexChange(index) {
-    this.setState({
-        index: index,
-    });
-    console.log(index);
-}
 
 goToPrevSlide() {
     if(this.state.currentIndex === 0)
@@ -132,6 +105,7 @@ goToPrevSlide() {
         translateSlideValue: prevState.translateSlideValue + this.slideWidth(),
         translateThumbnailValue: prevState.translateThumbnailValue + this.thumbnailWidth(),
         currentPhoto: this.state.photos[prevState.currentIndex - 1],
+        currentDescription: this.state.descriptions[prevState.currentIndex - 1],
     }))
 }
 
@@ -143,6 +117,7 @@ goToNextSlide() {
         translateSlideValue: 0,
         translateThumbnailValue: 0,
         currentPhoto: this.state.photos[0],
+        currentDescription: this.state.descriptions[0],
         })
     }
     this.setState(prevState => ({
@@ -150,6 +125,7 @@ goToNextSlide() {
         translateSlideValue: prevState.translateSlideValue + -(this.slideWidth()),
         translateThumbnailValue: prevState.translateThumbnailValue + -(this.thumbnailWidth()),
         currentPhoto: this.state.photos[prevState.currentIndex + 1],
+        currentDescription: this.state.descriptions[prevState.currentIndex + 1],
     }));
 }
 
@@ -186,7 +162,6 @@ handleClick(event) {
                 <ThumbnailGallery 
                 photos={this.state.photos} 
                 index={this.state.currentIndex}
-                onIndexChange={this.handleIndexChange} 
                 translateValue={this.state.translateThumbnailValue}
                 goToPrevSlide={this.goToPrevSlide}
                 goToNextSlide={this.goToNextSlide}
@@ -198,9 +173,7 @@ handleClick(event) {
                 <SliderContainer>
                 <PhotoSlideShow 
                 photos={this.state.photos} 
-                descriptions={this.state.descriptions}
                 index={this.state.currentIndex} 
-                onIndexChange={this.handleIndexChange} 
                 translateValue={this.state.translateSlideValue}
                 goToPrevSlide={this.goToPrevSlide}
                 goToNextSlide={this.goToNextSlide}
@@ -210,13 +183,13 @@ handleClick(event) {
                 </SliderContainer>
 
                 <DescriptionContainer>        
-                    <DescriptionWrapper> 
-                        {this.state.descriptions}
-                    {/* {this.state.descriptions.map((description, i) => {
-                     <DescriptionList key={i} description={description} />
-                     })
-                    }  */}
-                </DescriptionWrapper>
+                <Descriptions 
+                descriptions={this.state.descriptions}
+                index={this.state.currentIndex}
+                goToPrevSlide={this.goToPrevSlide}
+                goToNextSlide={this.goToNextSlide} 
+                handleClick={this.handleClick}
+                />
                 </DescriptionContainer>
                 </div>
                 : <PhotoCollage photos={this.state.photos} renderCarousel={this.renderCarousel}/>}
@@ -224,14 +197,6 @@ handleClick(event) {
         );
     }
 }
-
-
-export const DescriptionList = ({ description }) => {
-    return (
-      <Description className="description">{description}</Description>
-    );
-  }
-
 
 
 
