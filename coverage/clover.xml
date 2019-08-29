@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1567028505381" clover="3.2.0">
-  <project timestamp="1567028505381" name="All files">
-    <metrics statements="75" coveredstatements="41" conditionals="12" coveredconditionals="0" methods="29" coveredmethods="8" elements="116" coveredelements="49" complexity="0" loc="75" ncloc="75" packages="1" files="3" classes="3"/>
+<coverage generated="1567045289353" clover="3.2.0">
+  <project timestamp="1567045289354" name="All files">
+    <metrics statements="75" coveredstatements="57" conditionals="12" coveredconditionals="2" methods="29" coveredmethods="18" elements="116" coveredelements="77" complexity="0" loc="75" ncloc="75" packages="1" files="3" classes="3"/>
     <file name="PhotoCollage.jsx" path="/Users/Wendy/hrsf122/Front End Capstone - AirBnB/client/src/components/PhotoCollage.jsx">
-      <metrics statements="13" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
+      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
       <line num="4" count="1" type="stmt"/>
       <line num="33" count="1" type="stmt"/>
       <line num="41" count="1" type="stmt"/>
@@ -11,15 +11,15 @@
       <line num="69" count="1" type="stmt"/>
       <line num="84" count="1" type="stmt"/>
       <line num="99" count="1" type="stmt"/>
-      <line num="100" count="1" type="stmt"/>
-      <line num="102" count="0" type="stmt"/>
-      <line num="103" count="0" type="stmt"/>
-      <line num="104" count="0" type="stmt"/>
-      <line num="105" count="0" type="stmt"/>
-      <line num="106" count="0" type="stmt"/>
+      <line num="100" count="6" type="stmt"/>
+      <line num="102" count="1" type="stmt"/>
+      <line num="103" count="1" type="stmt"/>
+      <line num="104" count="1" type="stmt"/>
+      <line num="105" count="1" type="stmt"/>
+      <line num="106" count="1" type="stmt"/>
     </file>
     <file name="PhotoSlideShow.jsx" path="/Users/Wendy/hrsf122/Front End Capstone - AirBnB/client/src/components/PhotoSlideShow.jsx">
-      <metrics statements="32" coveredstatements="21" conditionals="4" coveredconditionals="0" methods="12" coveredmethods="4"/>
+      <metrics statements="32" coveredstatements="23" conditionals="4" coveredconditionals="0" methods="12" coveredmethods="6"/>
       <line num="5" count="1" type="stmt"/>
       <line num="21" count="1" type="stmt"/>
       <line num="28" count="1" type="stmt"/>
@@ -47,23 +47,23 @@
       <line num="188" count="0" type="stmt"/>
       <line num="194" count="0" type="stmt"/>
       <line num="200" count="1" type="stmt"/>
-      <line num="201" count="0" type="stmt"/>
+      <line num="201" count="1" type="stmt"/>
       <line num="208" count="1" type="stmt"/>
-      <line num="209" count="0" type="stmt"/>
+      <line num="209" count="1" type="stmt"/>
       <line num="215" count="1" type="stmt"/>
       <line num="216" count="1" type="stmt"/>
     </file>
     <file name="ThumbnailGallery.jsx" path="/Users/Wendy/hrsf122/Front End Capstone - AirBnB/client/src/components/ThumbnailGallery.jsx">
-      <metrics statements="30" coveredstatements="12" conditionals="8" coveredconditionals="0" methods="11" coveredmethods="3"/>
+      <metrics statements="30" coveredstatements="21" conditionals="8" coveredconditionals="2" methods="11" coveredmethods="6"/>
       <line num="12" count="1" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
       <line num="29" count="1" type="stmt"/>
-      <line num="47" count="2" type="stmt"/>
-      <line num="49" count="2" type="stmt"/>
-      <line num="53" count="2" type="stmt"/>
-      <line num="54" count="2" type="stmt"/>
-      <line num="55" count="2" type="stmt"/>
-      <line num="56" count="2" type="stmt"/>
+      <line num="47" count="3" type="stmt"/>
+      <line num="49" count="3" type="stmt"/>
+      <line num="53" count="3" type="stmt"/>
+      <line num="54" count="3" type="stmt"/>
+      <line num="55" count="3" type="stmt"/>
+      <line num="56" count="3" type="stmt"/>
       <line num="60" count="0" type="cond" truecount="0" falsecount="2"/>
       <line num="61" count="0" type="stmt"/>
       <line num="63" count="0" type="stmt"/>
@@ -71,20 +71,20 @@
       <line num="74" count="0" type="stmt"/>
       <line num="77" count="0" type="stmt"/>
       <line num="84" count="0" type="stmt"/>
-      <line num="88" count="0" type="stmt"/>
-      <line num="89" count="0" type="stmt"/>
-      <line num="90" count="0" type="stmt"/>
-      <line num="91" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="88" count="1" type="stmt"/>
+      <line num="89" count="1" type="stmt"/>
+      <line num="90" count="1" type="stmt"/>
+      <line num="91" count="1" type="cond" truecount="1" falsecount="1"/>
       <line num="92" count="0" type="stmt"/>
-      <line num="93" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="93" count="1" type="cond" truecount="1" falsecount="1"/>
       <line num="94" count="0" type="stmt"/>
-      <line num="96" count="0" type="stmt"/>
-      <line num="103" count="2" type="stmt"/>
-      <line num="112" count="5" type="stmt"/>
+      <line num="96" count="1" type="stmt"/>
+      <line num="103" count="4" type="stmt"/>
+      <line num="112" count="20" type="stmt"/>
       <line num="123" count="1" type="stmt"/>
-      <line num="124" count="0" type="stmt"/>
-      <line num="130" count="0" type="stmt"/>
-      <line num="131" count="0" type="stmt"/>
+      <line num="124" count="11" type="stmt"/>
+      <line num="130" count="11" type="stmt"/>
+      <line num="131" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>

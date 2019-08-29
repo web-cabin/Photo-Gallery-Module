@@ -128,7 +128,7 @@ export const Thumbnails = ({ image, handleClick, index }) => {
         backgroundPosition: 'top 50% right 50%'
     }
     return (
-        <Thumbnail className="thumbnail" style={styles} onClick={(event) => handleClick(event.target.value)} ></Thumbnail>
+        <Thumbnail className="thumbnail" style={styles} onClick={(event) => handleClick(event)} ></Thumbnail>
     );
 }
 

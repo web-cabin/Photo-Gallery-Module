@@ -199,7 +199,7 @@ export const Slide = ({ photo }) => {
   
 export const LeftArrow = (props) => {
     return (
-      <BackArrow onClick={props.goToPrevSlide}>
+      <BackArrow className="back-arrow" onClick={props.goToPrevSlide}>
       </BackArrow>
     );
   }
@@ -207,7 +207,7 @@ export const LeftArrow = (props) => {
   
 export const RightArrow = (props) => {
     return (
-      <NextArrow className="button" onClick={props.goToNextSlide}>
+      <NextArrow className="next-arrow" onClick={props.goToNextSlide}>
       </NextArrow>
     );
   }
