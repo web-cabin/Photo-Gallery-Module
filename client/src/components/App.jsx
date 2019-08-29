@@ -39,18 +39,19 @@ display: flex;
 align-items: center;
 justify-content: center;
 position: absolute;
-top: 150px;
+top: 200px;
 `;
 
 const DescriptionContainer = styled.div`
   position: relative;
   height: 300px;
-  max-width: 300px;
+  width: 300px;
   overflow: hidden;
   margin: 0 auto;
   white-space: nowrap;
-  top: 300px;
   border: solid 1px blue; 
+  top: 250px;
+  right: 40px;
 `;
 
 const DescriptionWrapper = styled.div`
