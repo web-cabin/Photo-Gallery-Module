@@ -60,6 +60,13 @@ const DescriptionWrapper = styled.div`
   width: 100%;
 `;
 
+const SliderWrapper = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+`;
+
+
 class App extends React.Component {
     
     constructor(props) {
@@ -69,12 +76,15 @@ class App extends React.Component {
             photos: [],
             descriptions: [],
             showSlideshow: false,
-            index: 0,
+            currentIndex: 0,
             translateValue: 0,
         }
         this.fetchPhotos = this.fetchPhotos.bind(this);
         this.renderCarousel = this.renderCarousel.bind(this);
         this.handleIndexChange = this.handleIndexChange.bind(this);
+        this.goToPrevSlide = this.goToPrevSlide.bind(this);
+        this.goToNextSlide = this.goToNextSlide.bind(this);
+        this.slideWidth = this.slideWidth.bind(this);
     }
 
     componentDidMount() {
@@ -109,9 +119,42 @@ class App extends React.Component {
     handleIndexChange(index) {
         this.setState({
             index: index,
-        })
+        });
+        console.log(index);
     }
 
+    goToPrevSlide() {
+        if(this.state.currentIndex === 0)
+          return;
+        
+        this.setState(prevState => ({
+          currentIndex: prevState.currentIndex - 1,
+          translateValue: prevState.translateValue + this.slideWidth()
+        }))
+    }
+
+    
+    goToNextSlide() {
+    // Exiting the method early if we are at the end of the images array.
+    // We also want to reset currentIndex and translateValue, so we return
+    // to the first image in the array.
+    if(this.state.currentIndex === this.state.photos.length - 1) {
+        return this.setState({
+        currentIndex: 0,
+        translateValue: 0
+        })
+    }
+    
+    // This will not run if we met the if condition above
+        this.setState(prevState => ({
+            currentIndex: prevState.currentIndex + 1,
+            translateValue: prevState.translateValue + -(this.slideWidth())
+        }));
+    }
+
+    slideWidth() {
+        return document.querySelector('.slide').clientWidth;
+     }
 
     render() {
         return (
@@ -119,10 +162,19 @@ class App extends React.Component {
                 {this.state.showSlideshow? 
                 <div>
                 <ThumbnailContainer>
-                <ThumbnailGallery photos={this.state.photos} onIndexChange={this.handleIndexChange} />
+                <ThumbnailGallery photos={this.state.photos} onIndexChange={this.handleIndexChange} index={this.state.index} />
                 </ThumbnailContainer>
                 <SliderContainer>
-                <PhotoSlideShow photos={this.state.photos} descriptions={this.state.descriptions} onIndexChange={this.handleIndexChange} />
+                <PhotoSlideShow 
+                photos={this.state.photos} 
+                descriptions={this.state.descriptions} 
+                onIndexChange={this.handleIndexChange} 
+                translateValue={this.state.translateValue}
+                goToPrevSlide={this.goToPrevSlide}
+                goToNextSlide={this.goToNextSlide}
+                slideWidth={this.slideWidth}
+                />
+
                 </SliderContainer>
                 <DescriptionContainer>        
                     <DescriptionWrapper> 
@@ -141,11 +193,24 @@ class App extends React.Component {
 }
 
 
-const DescriptionList = ({ description }) => {
+export const DescriptionList = ({ description }) => {
     return (
       <Description className="description">{description}</Description>
     );
   }
+
+
+  const Slide = ({ photo }) => {
+        var styles = {
+            backgroundImage: `url(${photo})`,
+            backgroundSize:'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '50% 60%'
+        }
+        return (
+            <Slides className="slide" style={styles}></Slides>
+        );
+};
 
 
 export default App; 

@@ -76,9 +76,9 @@ class PhotoSlideShow extends React.Component {
       this.state = {
         translateValue: 0
       }
-      this.goToPrevSlide = this.goToPrevSlide.bind(this);
-      this.goToNextSlide = this.goToNextSlide.bind(this);
-      this.slideWidth = this.slideWidth.bind(this);
+      // this.goToPrevSlide = this.goToPrevSlide.bind(this);
+      // this.goToNextSlide = this.goToNextSlide.bind(this);
+      // this.slideWidth = this.slideWidth.bind(this);
       this.handleChange = this.handleChange.bind(this);
     }
 
@@ -86,44 +86,44 @@ class PhotoSlideShow extends React.Component {
       this.props.onIndexChange(e.target.value);
     }
   
-    goToPrevSlide() {
-      if(this.state.currentIndex === 0)
-        return;
+    // goToPrevSlide() {
+    //   if(this.state.currentIndex === 0)
+    //     return;
       
-      this.setState(prevState => ({
-        currentIndex: prevState.currentIndex - 1,
-        translateValue: prevState.translateValue + this.slideWidth()
-      }))
-    }
+    //   this.setState(prevState => ({
+    //     currentIndex: prevState.currentIndex - 1,
+    //     translateValue: prevState.translateValue + this.slideWidth()
+    //   }))
+    // }
   
-    goToNextSlide() {
-      // Exiting the method early if we are at the end of the images array.
-      // We also want to reset currentIndex and translateValue, so we return
-      // to the first image in the array.
-      if(this.state.currentIndex === this.props.photos.length - 1) {
-        return this.setState({
-          currentIndex: 0,
-          translateValue: 0
-        })
-      }
+    // goToNextSlide() {
+    //   // Exiting the method early if we are at the end of the images array.
+    //   // We also want to reset currentIndex and translateValue, so we return
+    //   // to the first image in the array.
+    //   if(this.state.currentIndex === this.props.photos.length - 1) {
+    //     return this.setState({
+    //       currentIndex: 0,
+    //       translateValue: 0
+    //     })
+    //   }
       
-      // This will not run if we met the if condition above
-      this.setState(prevState => ({
-        currentIndex: prevState.currentIndex + 1,
-        translateValue: prevState.translateValue + -(this.slideWidth())
-      }));
-    }
+    //   // This will not run if we met the if condition above
+    //   this.setState(prevState => ({
+    //     currentIndex: prevState.currentIndex + 1,
+    //     translateValue: prevState.translateValue + -(this.slideWidth())
+    //   }));
+    // }
   
-    slideWidth() {
-       return document.querySelector('.slide').clientWidth;
-    }
+    // slideWidth() {
+    //    return document.querySelector('.slide').clientWidth;
+    // }
   
     render() {
       console.log('rendering photoslideshow');
       return (
         <div>
           <SliderWrapper style={{
-              transform: `translateX(${this.state.translateValue}px)`,
+              transform: `translateX(${this.props.translateValue}px)`,
               transition: 'transform ease-out 0.45s'
             }}> 
               {
@@ -133,9 +133,9 @@ class PhotoSlideShow extends React.Component {
               }
           </SliderWrapper>
             
-         <LeftArrow goToPrevSlide={this.goToPrevSlide} />
+         <LeftArrow goToPrevSlide={this.props.goToPrevSlide} />
 
-         <RightArrow goToNextSlide={this.goToNextSlide}/> 
+         <RightArrow goToNextSlide={this.props.goToNextSlide}/> 
 
          {/* <ThumbnailGallery photos={this.props.photos} currentIndex={this.state.currentIndex} /> */}
 
@@ -148,7 +148,7 @@ class PhotoSlideShow extends React.Component {
         })
       }  */}
       {/* </DescriptionWrapper>
-      </DescriptionContainer> */} */}
+      </DescriptionContainer> */} 
    
       </div>
       );
@@ -170,17 +170,17 @@ export const Slide = ({ photo }) => {
   };
 
   
-export const LeftArrow = (props) => {
+export const LeftArrow = ({ goToPrevSlide }) => {
     return (
-      <BackArrow className="back-arrow" onClick={props.goToPrevSlide}>
+      <BackArrow className="back-arrow" onClick={goToPrevSlide}>
       </BackArrow>
     );
   }
   
   
-export const RightArrow = (props) => {
+export const RightArrow = ({ goToNextSlide }) => {
     return (
-      <NextArrow className="next-arrow" onClick={props.goToNextSlide}>
+      <NextArrow className="next-arrow" onClick={goToNextSlide}>
       </NextArrow>
     );
   }

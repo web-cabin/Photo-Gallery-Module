@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import PhotoCollage from '../client/src/components/PhotoCollage.jsx';
-import PhotoSlideShow, { DescriptionList, BackArrow, NextArrow, LeftArrow, RightArrow } from '../client/src/components/PhotoSlideShow.jsx';
-import App from '../client/src/components/PhotoCollage.jsx';
+import PhotoSlideShow, { BackArrow, NextArrow, LeftArrow, RightArrow } from '../client/src/components/PhotoSlideShow.jsx';
+import App, { DescriptionList } from '../client/src/components/PhotoCollage.jsx';
 import ThumbnailGallery, { Thumbnails, Thumbnail } from '../client/src/components/ThumbnailGallery.jsx';
 import { wrap } from 'module';
 
@@ -52,9 +52,9 @@ describe('<PhotoSlideShow />', () => {
       expect(wrapper).toMatchSnapshot();
   });
 
-  const descriptions = ['this is a test', 'this is the room', 'this is the bathroom', 'this is the balcony'];
+  const description = ['this is a test', 'this is the room', 'this is the bathroom', 'this is the balcony'];
 
-  const description = shallow(<DescriptionList descriptions={descriptions}/>);
+  const description = shallow(<DescriptionList description={description}/>);
   it ('renders correctly', () => {
       expect(description).toMatchSnapshot();
   });
