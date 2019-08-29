@@ -47,6 +47,11 @@ class ThumbnailGallery extends React.Component {
     this.goToNextSlide = this.goToNextSlide.bind(this);
     this.thumbnailWidth = this.thumbnailWidth.bind(this);
     this.handleClick = this.handleClick.bind(this); 
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.props.onIndexChange(e.target.value);
   }
 
   goToPrevSlide() {

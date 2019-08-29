@@ -119,10 +119,10 @@ class App extends React.Component {
                 {this.state.showSlideshow? 
                 <div>
                 <ThumbnailContainer>
-                <ThumbnailGallery photos={this.state.photos} onChange={this.handleIndexChange} />
+                <ThumbnailGallery photos={this.state.photos} onIndexChange={this.handleIndexChange} />
                 </ThumbnailContainer>
                 <SliderContainer>
-                <PhotoSlideShow photos={this.state.photos} descriptions={this.state.descriptions} onChange={this.handleIndexChange} />
+                <PhotoSlideShow photos={this.state.photos} descriptions={this.state.descriptions} onIndexChange={this.handleIndexChange} />
                 </SliderContainer>
                 <DescriptionContainer>        
                     <DescriptionWrapper> 

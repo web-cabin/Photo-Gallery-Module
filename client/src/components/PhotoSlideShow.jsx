@@ -79,6 +79,11 @@ class PhotoSlideShow extends React.Component {
       this.goToPrevSlide = this.goToPrevSlide.bind(this);
       this.goToNextSlide = this.goToNextSlide.bind(this);
       this.slideWidth = this.slideWidth.bind(this);
+      this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+      this.props.onIndexChange(e.target.value);
     }
   
     goToPrevSlide() {
