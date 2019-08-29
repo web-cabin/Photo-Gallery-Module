@@ -60,11 +60,6 @@ const DescriptionWrapper = styled.div`
   width: 100%;
 `;
 
-const SliderWrapper = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
-`;
 
 
 class App extends React.Component {
@@ -200,17 +195,6 @@ export const DescriptionList = ({ description }) => {
   }
 
 
-  const Slide = ({ photo }) => {
-        var styles = {
-            backgroundImage: `url(${photo})`,
-            backgroundSize:'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: '50% 60%'
-        }
-        return (
-            <Slides className="slide" style={styles}></Slides>
-        );
-};
 
 
 export default App; 
