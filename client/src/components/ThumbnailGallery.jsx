@@ -101,7 +101,7 @@ class ThumbnailGallery extends React.Component {
     return (
       <div>
            <ThumbnailWrapper style={{
-               transform: `translateX(${this.state.translateValue}px)`,
+               transform: `translateX(${this.props.translateValue}px)`,
                transition: 'transform ease-out 0.45s'
             }}>
           {

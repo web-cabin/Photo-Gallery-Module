@@ -129,7 +129,7 @@ goToPrevSlide() {
     this.setState(prevState => ({
         currentIndex: prevState.currentIndex - 1,
         translateSlideValue: prevState.translateSlideValue + this.slideWidth(),
-        translateThumbnailValue: prevState.translateValue + this.thumbnailWidth(),
+        translateThumbnailValue: prevState.translateThumbnailValue + this.thumbnailWidth(),
         currentPhoto: this.state.photos[prevState.currentIndex - 1],
     }))
 }
@@ -152,7 +152,7 @@ goToNextSlide() {
     this.setState(prevState => ({
         currentIndex: prevState.currentIndex + 1,
         translateSlideValue: prevState.translateSlideValue + -(this.slideWidth()),
-        translateThumbnailValue: prevState.translateValue + -(this.thumbnailWidth()),
+        translateThumbnailValue: prevState.translateThumbnailValue + -(this.thumbnailWidth()),
         currentPhoto: this.state.photos[prevState.currentIndex + 1],
     }));
 }
