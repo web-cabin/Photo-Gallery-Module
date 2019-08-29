@@ -5,6 +5,7 @@ import $ from 'jquery';
 import PhotoSlideShow from './PhotoSlideShow.jsx';
 import ThumbnailGallery from './ThumbnailGallery.jsx';
 import styled from 'styled-components';
+import Descriptions from './Descriptions.jsx'; 
 
 
 const ThumbnailContainer = styled.div`
@@ -136,9 +137,6 @@ goToPrevSlide() {
 
     
 goToNextSlide() {
-// Exiting the method early if we are at the end of the images array.
-// We also want to reset currentIndex and translateValue, so we return
-// to the first image in the array.
     if(this.state.currentIndex === this.state.photos.length - 1) {
         return this.setState({
         currentIndex: 0,
@@ -147,8 +145,6 @@ goToNextSlide() {
         currentPhoto: this.state.photos[0],
         })
     }
-
-// This will not run if we met the if condition above
     this.setState(prevState => ({
         currentIndex: prevState.currentIndex + 1,
         translateSlideValue: prevState.translateSlideValue + -(this.slideWidth()),
@@ -178,9 +174,6 @@ handleClick(event) {
     } else if (event < this.state.currentIndex) {
         this.goToPrevSlide();
     }
-// this.setState({
-//   currentThumbnailIndex: event,
-// });
 }
 
     render() {

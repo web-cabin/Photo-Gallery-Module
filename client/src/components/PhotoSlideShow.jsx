@@ -1,21 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// const SliderContainer = styled.div`
-//   display: flex;
-//   margin: 0 auto;
-//   overflow: hidden;
-//   white-space: nowrap;
-//   width: 785px;
-//   float: left;
-//   margin: 130px;
-// `;
-
-// height: 500px
-
-// white-space: nowrap;
-// flex-direction: row;
-// flex-wrap: nowrap;
 
 const SliderWrapper = styled.div`
   position: relative;
@@ -76,47 +61,7 @@ class PhotoSlideShow extends React.Component {
       this.state = {
         translateValue: 0
       }
-      // this.goToPrevSlide = this.goToPrevSlide.bind(this);
-      // this.goToNextSlide = this.goToNextSlide.bind(this);
-      // this.slideWidth = this.slideWidth.bind(this);
-      this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(e) {
-      this.props.onIndexChange(e.target.value);
-    }
-  
-    // goToPrevSlide() {
-    //   if(this.state.currentIndex === 0)
-    //     return;
-      
-    //   this.setState(prevState => ({
-    //     currentIndex: prevState.currentIndex - 1,
-    //     translateValue: prevState.translateValue + this.slideWidth()
-    //   }))
-    // }
-  
-    // goToNextSlide() {
-    //   // Exiting the method early if we are at the end of the images array.
-    //   // We also want to reset currentIndex and translateValue, so we return
-    //   // to the first image in the array.
-    //   if(this.state.currentIndex === this.props.photos.length - 1) {
-    //     return this.setState({
-    //       currentIndex: 0,
-    //       translateValue: 0
-    //     })
-    //   }
-      
-    //   // This will not run if we met the if condition above
-    //   this.setState(prevState => ({
-    //     currentIndex: prevState.currentIndex + 1,
-    //     translateValue: prevState.translateValue + -(this.slideWidth())
-    //   }));
-    // }
-  
-    // slideWidth() {
-    //    return document.querySelector('.slide').clientWidth;
-    // }
+  }
   
     render() {
       console.log('rendering photoslideshow');
@@ -137,19 +82,6 @@ class PhotoSlideShow extends React.Component {
 
          <RightArrow goToNextSlide={this.props.goToNextSlide} index={this.props.index} handleClick={this.props.handleClick.bind(this)}/> 
 
-         {/* <ThumbnailGallery photos={this.props.photos} currentIndex={this.state.currentIndex} /> */}
-
-      {/* <DescriptionContainer>        
-      <DescriptionWrapper> 
-        {this.props.descriptions}
-      {/* {
-        this.props.descriptions.map((description, i) => {
-          <DescriptionList key={i} description={description} />
-        })
-      }  */}
-      {/* </DescriptionWrapper>
-      </DescriptionContainer> */} 
-   
       </div>
       );
     }
@@ -184,12 +116,6 @@ export const RightArrow = ({ handleClick, index }) => {
       </NextArrow>
     );
   }
-
-// export const DescriptionList = ({ description }) => {
-//     return (
-//       <Description className="description">{description}</Description>
-//     );
-//   }
 
 
 export default PhotoSlideShow;
