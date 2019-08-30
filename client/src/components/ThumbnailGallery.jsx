@@ -53,7 +53,7 @@ export const Thumbnails = ({ image, handleClick, index }) => {
         backgroundImage: `url(${image})`,
         backgroundSize:'cover',
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'top 50% right 50%'
+        backgroundPosition: 'top 50% right 50%',
     }
     return (
         <Thumbnail className="thumbnail" style={styles} onClick={(event) => handleClick(event)} ></Thumbnail>

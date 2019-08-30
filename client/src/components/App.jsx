@@ -10,13 +10,13 @@ import Descriptions from './Descriptions.jsx';
 
 const ThumbnailContainer = styled.div`
     position: relative; 
-    max-width: 300px;
+    max-width: 325px;
     overflow: hidden;
     margin: 0 auto;
     white-space: nowrap;
     float: right;
     top: 160px;
-    right: 70px;
+    right: 40px;
 `;
 
 const SliderContainer = styled.div`
@@ -61,6 +61,24 @@ const Button = styled.a`
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `;
 
+const ExitButton = styled.div`
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: transform ease-in .1s;
+    position: absolute;
+    top: 7%;
+    right: 50px;
+    z-index: 999;
+    color: #fff;
+    background-image: url('https://photogalleryproject.s3.us-east-2.amazonaws.com/ExitButton.png
+    ');
+    `;
+
 
 
 class App extends React.Component {
@@ -87,6 +105,7 @@ class App extends React.Component {
         this.thumbnailWidth = this.thumbnailWidth.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
+        this.handleExitClick = this.handleExitClick.bind(this);
     }
 
 componentDidMount() {
@@ -123,6 +142,13 @@ handleButtonClick() {
         renderPhotoGallery: true,
     })
 };
+
+handleExitClick() {
+    this.setState({
+        showSlideshow: false,
+        renderPhotoGallery: false,
+    });
+}
 
 
 goToPrevSlide() {
@@ -209,6 +235,7 @@ handleClick(event) {
                 slideWidth={this.slideWidth}
                 handleClick={this.handleClick}
                 />
+                <ExitButton onClick={this.handleExitClick}/>
                 </SliderContainer>
 
                 <DescriptionContainer>        
@@ -230,7 +257,6 @@ handleClick(event) {
         );
     }
 }
-
 
 
 export default App; 
