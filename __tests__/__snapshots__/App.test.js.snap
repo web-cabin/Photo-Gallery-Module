@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PhotoSlideShow /> renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`<ThumbnailGallery /> renders correctly 1`] = `ShallowWrapper {}`;

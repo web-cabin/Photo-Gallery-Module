@@ -1,6 +1,5 @@
 import React from 'react';
 import PhotoCollage from './PhotoCollage.jsx';
-import axios from 'axios';
 import $ from 'jquery';
 import PhotoSlideShow from './PhotoSlideShow.jsx';
 import ThumbnailGallery from './ThumbnailGallery.jsx';

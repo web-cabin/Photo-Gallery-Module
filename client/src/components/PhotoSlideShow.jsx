@@ -78,9 +78,9 @@ class PhotoSlideShow extends React.Component {
               }
           </SliderWrapper>
             
-         <LeftArrow goToPrevSlide={this.props.goToPrevSlide} index={this.props.index} handleClick={this.props.handleClick.bind(this)}/>
+         <LeftArrow  index={this.props.index} handleClick={this.props.handleClick}/>
 
-         <RightArrow goToNextSlide={this.props.goToNextSlide} index={this.props.index} handleClick={this.props.handleClick.bind(this)}/> 
+         <RightArrow index={this.props.index} handleClick={this.props.handleClick}/> 
 
       </div>
       );
