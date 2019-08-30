@@ -18,23 +18,25 @@ const ImageOne = styled.img`
     -o-transition: all .5s ease;
     transition: all .5s ease;
     border: solid 1px black;
+    z-index: -1; 
 
-    ${ImageOne}:hover {
-        transform: scale(0.9);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        -ms-transform: scale(1.2); 
-        transform: scale(1.2)
-    }
 `;
 
-const ContainerOne = styled.div`
-    &:hover ${ImageOne} {
-        display: none;
-    }
-`;
+    // ${ImageOne}:hover {
+    //     transform: scale(0.9);
+    //     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    //     -webkit-transform: scale(1.2);
+    //     -moz-transform: scale(1.2);
+    //     -o-transform: scale(1.2);
+    //     -ms-transform: scale(1.2); 
+    //     transform: scale(1.2)
+    // }
+
+// const ContainerOne = styled.div`
+//     &:hover ${ImageOne} {
+//         display: none;
+//     }
+// `;
 
 
 
@@ -50,6 +52,7 @@ const ImageTwo = styled.img`
     box-sizing: border-box;
     cursor: pointer;
     border: solid 1px black;
+    z-index: 1; 
 `;
 
 const ImageThree = styled.img`
@@ -64,6 +67,7 @@ const ImageThree = styled.img`
     box-sizing: border-box;
     cursor: pointer;
     border: solid 1px black;
+    z-index: 1; 
 `;
 
 const ImageFour = styled.img`
@@ -79,6 +83,7 @@ const ImageFour = styled.img`
     box-sizing: border-box;
     cursor: pointer;
     border: solid 1px black;
+    z-index: 1; 
 `;
 
 const ImageFive = styled.img`
@@ -94,7 +99,9 @@ const ImageFive = styled.img`
     box-sizing: border-box;
     cursor: pointer;
     border: solid 1px black;
+    z-index: 1; 
 `;
+
 
 const PhotoCollage = ({ photos, renderCarousel }) => {
     return (

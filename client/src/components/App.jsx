@@ -15,8 +15,8 @@ const ThumbnailContainer = styled.div`
     margin: 0 auto;
     white-space: nowrap;
     float: right;
-    top: 130px;
-    right: 60px;
+    top: 160px;
+    right: 70px;
 `;
 
 const SliderContainer = styled.div`
@@ -36,8 +36,29 @@ const DescriptionContainer = styled.div`
   width: 300px;
   overflow: hidden;
   margin: 0 auto;
-  top: 250px;
-  right: 40px;
+  top: 200px;
+  right: 25px;
+`;
+
+const Button = styled.a`
+    position: absolute;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    height: 22px;
+    font-weight: 500;
+    color: #484848;
+    border-radius: 3px;
+    padding: 0.5rem 0;
+    margin: 0.5rem 1rem;
+    width: 7rem;
+    background: white;
+    z-index: 2;
+    right: 1%;
+    top: 52%;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `;
 
 
@@ -192,7 +213,11 @@ handleClick(event) {
                 />
                 </DescriptionContainer>
                 </div>
-                : <PhotoCollage photos={this.state.photos} renderCarousel={this.renderCarousel}/>}
+                : 
+                <div>
+                <PhotoCollage photos={this.state.photos} renderCarousel={this.renderCarousel}/>
+                <Button> View Photos </Button>
+                </div>}
             </div>
         );
     }
