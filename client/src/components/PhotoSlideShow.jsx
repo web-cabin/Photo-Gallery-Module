@@ -69,7 +69,7 @@ class PhotoSlideShow extends React.Component {
         <div>
           <SliderWrapper style={{
               transform: `translateX(${this.props.translateValue}px)`,
-              transition: 'transform ease-out 0.45s'
+              transition: 'transform ease 0.25s'
             }}> 
               {
                 this.props.photos.map((photo, i) => (
