@@ -1,12 +1,12 @@
 import React from 'react'; 
 import styled from 'styled-components';
 
-const indexTrackerWrapper = styled.div`
+const IndexTrackerWrapper = styled.div`
   font-family: 'Montserrat', sans-serif;
   color: #484848;
-  font-weight: bold;
+  font-weight: 540;
   line-height: 1.43;
-  font-size: 20px;
+  font-size: 17px;
 `;
 
 const DescriptionWrapper = styled.div`
@@ -26,9 +26,9 @@ const Descriptions = (props) => {
   return (
       <div>
           <DescriptionWrapper>
-          <indexTrackerWrapper>
+          <IndexTrackerWrapper>
           {`${props.index + 1}/${props.descriptions.length}`}
-          </indexTrackerWrapper>
+          </IndexTrackerWrapper>
           <br />
           <br />
           { props.descriptions[props.index] }

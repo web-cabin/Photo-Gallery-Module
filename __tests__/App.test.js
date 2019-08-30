@@ -75,35 +75,20 @@ describe('<ThumbnailGallery />', () => {
 
     it ('test click event', () => {
         const mockCallback = jest.fn();
-        const images = ['https://photogalleryproject.s3.us-east-2.amazonaws.com/image1.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image2.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image3.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image4.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image5.jpeg'];
 
-
-        const button = shallow((<Thumbnails images={images} handleClick={mockCallback}></Thumbnails>));
+        const button = shallow((<Thumbnails handleClick={mockCallback}></Thumbnails>));
         button.find('.thumbnail').simulate('click');
         expect(mockCallback).toHaveBeenCalled();
     });
 
-    it ('tests click event to see if it triggers a component method to run', () => {
-        const mockCallback = jest.fn();
-        const photos = ['https://photogalleryproject.s3.us-east-2.amazonaws.com/image1.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image2.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image3.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image4.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image5.jpeg'];
+    it ('should test for the array', () => {
+        const images = ['https://photogalleryproject.s3.us-east-2.amazonaws.com/image1.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image2.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image3.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image4.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image5.jpeg'];
 
-
-        const wrap = mount((<Thumbnails photos={photos} ></Thumbnails>));
-        wrap.find('.thumbnail').at(1).simulate('click');
-        expect(wrap.state('currentThumbnailIndex')).toBe(0);
-        expect(wrap.state('translateValue')).toBeGreaterThanOrEqual(0);
+        let wrap = shallow(<Thumbnails images={images} />);
+        expect(wrap.find('Thumbnails')).toHaveLength(5);
     });
 
-    it ('tests state change', () => {
-        const photos = ['https://photogalleryproject.s3.us-east-2.amazonaws.com/image1.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image2.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image3.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image4.jpeg', 'https://photogalleryproject.s3.us-east-2.amazonaws.com/image5.jpeg'];
-
-        let wrap = shallow(<Thumbnails photos={photos}/>);
-        expect(wrap.state('currentThumbnailIndex')).toBeGreaterThanOrEqual(0);
-        expect(wrap.state('translateValue')).toBeGreaterThanOrEqual(0);
-    });
 });
-
-
 
 
 
