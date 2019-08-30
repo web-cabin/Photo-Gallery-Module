@@ -1,12 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Container = styled.div`
+    &: hover #image:not(:hover) {
+        background-color: #000;
+        filter: brightness(50%);
+    }
+`;
+
 const ImageOne = styled.img`
     display: inline-block;
     left: 0%;
     position: absolute;
     transform: scale(1);
-    opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     height: 478px;
     width: 720px; 
@@ -19,7 +25,7 @@ const ImageOne = styled.img`
     transition: all .5s ease;
     border: solid 1px black;
     z-index: -1; 
-
+    transition: opacity 0.2s;
 `;
 
     // ${ImageOne}:hover {
@@ -38,14 +44,11 @@ const ImageOne = styled.img`
 //     }
 // `;
 
-
-
 const ImageTwo = styled.img`
     display: inline-block;
     position: absolute;
     transform: scale(1);
     left: 50%;
-    opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     height: 239px;
     width: 360px; 
@@ -53,6 +56,7 @@ const ImageTwo = styled.img`
     cursor: pointer;
     border: solid 1px black;
     z-index: 1; 
+    transition: opacity 0.2s;
 `;
 
 const ImageThree = styled.img`
@@ -60,7 +64,6 @@ const ImageThree = styled.img`
     position: absolute;
     transform: scale(1);
     right: 0%;
-    opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     height: 239px;
     width: 360px; 
@@ -68,6 +71,7 @@ const ImageThree = styled.img`
     cursor: pointer;
     border: solid 1px black;
     z-index: 1; 
+    transition: opacity 0.2s;
 `;
 
 const ImageFour = styled.img`
@@ -76,7 +80,6 @@ const ImageFour = styled.img`
     transform: scale(1);
     left: 50%;
     top: 31%;
-    opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     height: 239px;
     width: 360px; 
@@ -84,6 +87,7 @@ const ImageFour = styled.img`
     cursor: pointer;
     border: solid 1px black;
     z-index: 1; 
+    transition: opacity 0.2s;
 `;
 
 const ImageFive = styled.img`
@@ -92,7 +96,6 @@ const ImageFive = styled.img`
     transform: scale(1);
     right: 0%;
     top: 31%;
-    opacity: 1;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     height: 239px;
     width: 360px; 
@@ -100,18 +103,19 @@ const ImageFive = styled.img`
     cursor: pointer;
     border: solid 1px black;
     z-index: 1; 
+    transition: opacity 0.2s;
 `;
 
 
 const PhotoCollage = ({ photos, renderCarousel }) => {
     return (
-        <div>
-        <ImageOne src={`${photos[0]}`} className="image" onClick={() => renderCarousel()}/>
-        <ImageTwo src={`${photos[1]}`} className="image" onClick={() => renderCarousel()} />
-        <ImageThree src={`${photos[2]}`} className="image" onClick={() => renderCarousel()} />
-        <ImageFour src={`${photos[3]}`} className="image" onClick={() => renderCarousel()} />
-        <ImageFive src={`${photos[4]}`} className="image" onClick={() => renderCarousel()} />
-        </div>
+        <Container>
+        <ImageOne  src={`${photos[0]}`} id="image" onClick={() => renderCarousel()}/>
+        <ImageTwo src={`${photos[1]}`} id="image" onClick={() => renderCarousel()} />
+        <ImageThree src={`${photos[2]}`} id="image" onClick={() => renderCarousel()} />
+        <ImageFour src={`${photos[3]}`} id="image" onClick={() => renderCarousel()} />
+        <ImageFive src={`${photos[4]}`} id="image" onClick={() => renderCarousel()} />
+        </Container>
     );
 }
 
