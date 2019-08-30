@@ -26,22 +26,11 @@ const Descriptions = (props) => {
   return (
       <div>
           <DescriptionWrapper>
-          { props.descriptions[1]
-            //   props.descriptions.map((description, index) => (
-            //   <DescriptionList description={description} key={index} handleClick={props.handleClick.bind(this, index)} />
-            // ))
+          { props.descriptions[props.index]
+            //   <Description className="description" key={index} handleClick={props.handleClick.bind(this, index)}>{description}</Description>
           }
           </DescriptionWrapper>
       </div>
-  );
-}
-
-export const DescriptionList = ({ description }) => {
-   let styles = {
-    fontSize: 15,
-   }
-  return (
-      <Description className="description" onClick={() => handleClick(event)} >`${description}`</Description>
   );
 }
 
