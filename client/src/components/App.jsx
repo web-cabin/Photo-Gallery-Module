@@ -77,6 +77,7 @@ class App extends React.Component {
             currentIndex: 0,
             translateSlideValue: 0,
             translateThumbnailValue: 0,
+            renderPhotoGallery: false,
         }
         this.fetchPhotos = this.fetchPhotos.bind(this);
         this.renderCarousel = this.renderCarousel.bind(this);
@@ -85,6 +86,7 @@ class App extends React.Component {
         this.slideWidth = this.slideWidth.bind(this);
         this.thumbnailWidth = this.thumbnailWidth.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleButtonClick = this.handleButtonClick.bind(this);
     }
 
 componentDidMount() {
@@ -115,6 +117,12 @@ renderCarousel() {
         showSlideshow: true,
     });
 }
+
+handleButtonClick() {
+    this.setState({
+        renderPhotoGallery: true,
+    })
+};
 
 
 goToPrevSlide() {
@@ -177,7 +185,7 @@ handleClick(event) {
         console.log(this.state.currentIndex);
         return (
             <div className="container">
-                {this.state.showSlideshow? 
+                {this.state.showSlideshow || this.state.renderPhotoGallery ? 
                 <div>
                 <ThumbnailContainer>
                 <ThumbnailGallery 
@@ -216,7 +224,7 @@ handleClick(event) {
                 : 
                 <div>
                 <PhotoCollage photos={this.state.photos} renderCarousel={this.renderCarousel}/>
-                <Button> View Photos </Button>
+                <Button onClick={this.handleButtonClick}> View Photos </Button>
                 </div>}
             </div>
         );
