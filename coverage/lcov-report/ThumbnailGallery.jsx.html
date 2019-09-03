@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">46.15% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/13</span>
+        <span class='fraction'>6/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">28.57% </span>
+        <span class="strong">40% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/7</span>
+        <span class='fraction'>2/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/12</span>
+        <span class='fraction'>6/10</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -109,14 +109,7 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,12 +137,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,7 +162,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -213,16 +199,10 @@ class ThumbnailGallery extends React.Component {
 <span class="cstat-no" title="statement not covered" >    super(props);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    this.state = {</span>
-      borderColor: '#ffffff',
+      borderColor: false, 
     }
-<span class="cstat-no" title="statement not covered" >    this.thumbnailClick = this.thumbnailClick.bind(this);</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  th</span>umbnailClick() {
-<span class="cstat-no" title="statement not covered" >    this.setState({</span>
-      borderColor: 'black',
-    })
-  }
 &nbsp;
 <span class="fstat-no" title="function not covered" >  re</span>nder() {
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -233,7 +213,7 @@ class ThumbnailGallery extends React.Component {
             }}&gt;
           {
               this.props.photos.map(<span class="fstat-no" title="function not covered" >(i</span>mage, index) =&gt; (
-<span class="cstat-no" title="statement not covered" >              &lt;Thumbnails image={image} borderColor={this.state.borderColor} thumbnailClick={this.thumbnailClick} key={index} id="thumbnailId" handleClick={this.props.handleClick.bind(this, index)} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >              &lt;Thumbnails image={image} borderColor={this.state.borderColor} key={index} id="thumbnailId" handleClick={this.props.handleClick.bind(this, index)} /&gt;</span>
             ))
           }
           &lt;/ThumbnailWrapper&gt;
@@ -243,16 +223,15 @@ class ThumbnailGallery extends React.Component {
 }
 &nbsp;
 &nbsp;
-export const Thumbnails = ({ image, handleClick, borderColor, thumbnailClick }) =&gt; {
+export const Thumbnails = ({ image, handleClick, borderColor }) =&gt; {
     var styles = {
         backgroundImage: `url(${image})`,
         backgroundSize:'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'top 50% right 50%',
-        border: `${borderColor}`,
     }
     return (
-        &lt;Thumbnail className="thumbnail" style={styles} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >thumbnailClick}</span> onClick={(event) =&gt; handleClick(event)} &gt;&lt;/Thumbnail&gt;
+        &lt;Thumbnail className="thumbnail" style={styles} onClick={(event) =&gt; handleClick(event)} &gt;&lt;/Thumbnail&gt;
     );
 }
 &nbsp;
@@ -262,7 +241,7 @@ export default ThumbnailGallery; </pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Aug 30 2019 16:43:55 GMT-0700 (PDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Aug 30 2019 17:20:31 GMT-0700 (PDT)
 </div>
 </div>
 <script src="prettify.js"></script>

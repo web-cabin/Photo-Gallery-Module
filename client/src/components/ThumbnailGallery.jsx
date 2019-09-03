@@ -25,16 +25,10 @@ class ThumbnailGallery extends React.Component {
     super(props);
 
     this.state = {
-      borderColor: '#ffffff',
+      borderColor: false, 
     }
-    this.thumbnailClick = this.thumbnailClick.bind(this);
   }
 
-  thumbnailClick() {
-    this.setState({
-      borderColor: 'black',
-    })
-  }
 
   render() {
     return (
@@ -45,7 +39,7 @@ class ThumbnailGallery extends React.Component {
             }}>
           {
               this.props.photos.map((image, index) => (
-              <Thumbnails image={image} borderColor={this.state.borderColor} thumbnailClick={this.thumbnailClick} key={index} id="thumbnailId" handleClick={this.props.handleClick.bind(this, index)} />
+              <Thumbnails image={image} borderColor={this.state.borderColor} key={index} id="thumbnailId" handleClick={this.props.handleClick.bind(this, index)} />
             ))
           }
           </ThumbnailWrapper>
@@ -55,16 +49,15 @@ class ThumbnailGallery extends React.Component {
 }
 
 
-export const Thumbnails = ({ image, handleClick, borderColor, thumbnailClick }) => {
+export const Thumbnails = ({ image, handleClick, borderColor }) => {
     var styles = {
         backgroundImage: `url(${image})`,
         backgroundSize:'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'top 50% right 50%',
-        border: `${borderColor}`,
     }
     return (
-        <Thumbnail className="thumbnail" style={styles} onClick={() => thumbnailClick} onClick={(event) => handleClick(event)} ></Thumbnail>
+        <Thumbnail className="thumbnail" style={styles} onClick={(event) => handleClick(event)} ></Thumbnail>
     );
 }
 
