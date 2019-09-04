@@ -5,11 +5,13 @@ const port = 3000;
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const database = require('../database/index.js');
+const cors = require('cors')
 const mongoose = require('mongoose');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use(cors());
 
 app.get('/api/displayphotos/:id', (req, res) => {
   console.log(req.params.id);

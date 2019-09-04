@@ -113,12 +113,12 @@ componentDidMount() {
     
 fetchPhotos() {
     $.ajax({
-        url: '/api/displayphotos/8',
+        url: 'http://localhost:3000/api/displayphotos/21',
         method: 'GET',
         success: (response) => {
             // array.toString().split(',');
-            // console.log(response[0].description);
-            console.log(response);
+            console.log(response[0].description);
+            console.log(response[0].photo_url.toString().split(','));
             this.setState({
                 photos: response[0].photo_url.toString().split(','),
                 descriptions: response[0].description,
@@ -240,6 +240,7 @@ handleClick(event) {
                 <DescriptionContainer>        
                 <Descriptions 
                 descriptions={this.state.descriptions}
+                photos={this.state.photos} 
                 index={this.state.currentIndex}
                 goToPrevSlide={this.goToPrevSlide}
                 goToNextSlide={this.goToNextSlide} 

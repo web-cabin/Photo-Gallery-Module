@@ -10,8 +10,8 @@ const insertIntoDb = () => {
   let randomSentence = faker.lorem.sentence(); 
   
   while (index < 101) {
-    let randomIndex = Math.floor(Math.random() * Math.floor(100));
-    let randomNumOfPhotos = Math.floor(Math.random() * Math.floor(20)) + 5;
+    let randomIndex = Math.floor(Math.random() * Math.floor(90));
+    let randomNumOfPhotos = Math.floor(Math.random() * Math.floor(5)) + 5;
     let arrayOfURLs = [];
     for (let i = randomIndex; i < randomIndex + randomNumOfPhotos; i++) {
       arrayOfURLs.push(`https://photogalleryproject.s3.us-east-2.amazonaws.com/image${i}.jpeg`);
