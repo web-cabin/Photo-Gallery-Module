@@ -7,6 +7,7 @@ const axios = require('axios');
 const database = require('../database/index.js');
 const cors = require('cors')
 const mongoose = require('mongoose');
+const path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -26,7 +27,8 @@ app.get('/api/listings/:id', (req, res) => {
 });
 
 app.get('/bundle.js', (req, res) => {
-  res.sendFile('./bundle.js', (err) => {
+  console.log('hi')
+  res.sendFile(path.join(__dirname, '../public/bundle.js'), (err) => {
     if (err) {
       console.log(err); 
     } else {
