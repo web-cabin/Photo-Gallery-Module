@@ -10,7 +10,7 @@ const insertIntoDb = () => {
   let randomSentence = faker.lorem.sentence(); 
   
   while (index < 101) {
-    let randomIndex = Math.floor(Math.random() * Math.floor(90));
+    let randomIndex = Math.floor(Math.random() * Math.floor(90)) + 1;
     let randomNumOfPhotos = Math.floor(Math.random() * Math.floor(5)) + 5;
     let arrayOfURLs = [];
     for (let i = randomIndex; i < randomIndex + randomNumOfPhotos; i++) {
