@@ -113,7 +113,7 @@ componentDidMount() {
     
 fetchPhotos() {
     $.ajax({
-        url: 'http://localhost:3000/api/displayphotos/10',
+        url: 'http://localhost:3000/api/displayphotos/71',
         method: 'GET',
         success: (response) => {
             // array.toString().split(',');
