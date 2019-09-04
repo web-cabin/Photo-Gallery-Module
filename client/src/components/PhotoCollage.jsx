@@ -12,6 +12,7 @@ const Container = styled.div`
 
 const ImageOne = styled.img`
     display: inline-block;
+    top: 10%;
     left: 0%;
     position: absolute;
     transform: scale(1);
@@ -29,6 +30,7 @@ const ImageTwo = styled.img`
     position: absolute;
     transform: scale(1);
     left: 50%;
+    top: 10%;
     height: 239px;
     width: 360px; 
     box-sizing: border-box;
@@ -42,6 +44,7 @@ const ImageThree = styled.img`
     display: inline-block;
     position: absolute;
     transform: scale(1);
+    top: 10%;
     right: 0%;
     height: 239px;
     width: 360px; 
@@ -57,7 +60,7 @@ const ImageFour = styled.img`
     position: absolute;
     transform: scale(1);
     left: 50%;
-    top: 31%;
+    top: 40%;
     height: 239px;
     width: 360px; 
     box-sizing: border-box;
@@ -72,7 +75,7 @@ const ImageFive = styled.img`
     position: absolute;
     transform: scale(1);
     right: 0%;
-    top: 31%;
+    top: 40%;
     height: 239px;
     width: 360px; 
     box-sizing: border-box;
