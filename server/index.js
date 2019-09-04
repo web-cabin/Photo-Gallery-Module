@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(cors());
 
-app.get('/api/displayphotos/:id', (req, res) => {
+app.get('/api/listings/:id', (req, res) => {
   console.log(req.params.id);
 
   database.PhotoGallery.find({ listing_id: `${req.params.id}`}, (err, docs) => {
@@ -25,6 +25,15 @@ app.get('/api/displayphotos/:id', (req, res) => {
   });
 });
 
+app.get('/bundle.js', (req, res) => {
+  res.sendFile('./bundle.js', (err) => {
+    if (err) {
+      console.log(err); 
+    } else {
+      console.log('bundle.js file sent'); 
+    }
+  }); 
+});
 
 
 app.listen(port, () => console.log(`App listening on port ${port}`));

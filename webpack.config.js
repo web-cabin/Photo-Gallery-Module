@@ -17,7 +17,7 @@ module.exports = {
    output: {
     filename: 'bundle.js',
     path: __dirname + '/public',
-    libraryTarget: 'var',
-    library: 'photogallery'
+    // libraryTarget: 'var',
+    // library: 'photogallery'
   }
 };

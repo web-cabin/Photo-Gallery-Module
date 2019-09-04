@@ -110,10 +110,11 @@ class App extends React.Component {
 componentDidMount() {
     this.fetchPhotos();
 }
-    
+
+// 
 fetchPhotos() {
     $.ajax({
-        url: 'http://localhost:3000/api/displayphotos/71',
+        url: 'http://localhost:3000/api/listings/71',
         method: 'GET',
         success: (response) => {
             // array.toString().split(',');
