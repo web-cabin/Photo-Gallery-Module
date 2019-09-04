@@ -78,13 +78,6 @@ const ExitButton = styled.div`
     ');
     `;
 
-const NavBar = styled.img`
-    display: inline-block;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-`;
-
 
 
 
@@ -219,7 +212,6 @@ handleClick(event) {
         console.log(this.state.currentIndex);
         return (
             <div className="container">
-                 <NavBar src={`https://photogalleryproject.s3.us-east-2.amazonaws.com/NavBar.png`} />
                 {this.state.showSlideshow || this.state.renderPhotoGallery ? 
                 <div>
                 <ThumbnailContainer>

@@ -85,15 +85,31 @@ const ImageFive = styled.img`
     transition: transform .4s;  
 `;
 
+const NavBar = styled.img`
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+`;
+
+const ListingInfo = styled.img`
+    display: inline-block;
+    position: absolute;
+    top: 71%;
+    left: 12%;
+`;
+
 
 const PhotoCollage = ({ photos, renderCarousel }) => {
     return (
         <Container>
+        <NavBar src={`https://photogalleryproject.s3.us-east-2.amazonaws.com/NavBar.png`} />
         <ImageOne  src={`${photos[0]}`} id="image" onClick={() => renderCarousel()}/>
         <ImageTwo src={`${photos[1]}`} id="image" onClick={() => renderCarousel()} />
         <ImageThree src={`${photos[2]}`} id="image" onClick={() => renderCarousel()} />
         <ImageFour src={`${photos[3]}`} id="image" onClick={() => renderCarousel()} />
         <ImageFive src={`${photos[4]}`} id="image" onClick={() => renderCarousel()} />
+        <ListingInfo src={`https://photogalleryproject.s3.us-east-2.amazonaws.com/ListingInfo.png`} />
         </Container>
     );
 }
