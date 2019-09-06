@@ -1,5 +1,5 @@
-import React from 'react'; 
-import styled from 'styled-components';
+import React from 'react';
+import styled from 'styled-components' 
 
 const IndexTrackerWrapper = styled.div`
   font-family: 'Montserrat', sans-serif;

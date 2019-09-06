@@ -3,9 +3,8 @@ import PhotoCollage from './PhotoCollage.jsx';
 import $ from 'jquery';
 import PhotoSlideShow from './PhotoSlideShow.jsx';
 import ThumbnailGallery from './ThumbnailGallery.jsx';
-import styled from 'styled-components';
 import Descriptions from './Descriptions.jsx'; 
-
+import styled from 'styled-components'
 
 const ThumbnailContainer = styled.div`
     position: relative; 
@@ -114,8 +113,9 @@ componentDidMount() {
 
 // 
 fetchPhotos() {
+    const id = 71;
     $.ajax({
-        url: 'http://localhost:3000/api/listings/71',
+        url: `http://localhost:3000/api/listings/71`,
         method: 'GET',
         success: (response) => {
             // array.toString().split(',');

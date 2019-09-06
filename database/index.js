@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/photos', { useNewUrlParser: true });
+mongoose.connect('mongodb://database/photos', { useNewUrlParser: true });
 
 let PhotoSchema = new mongoose.Schema({
   id: 'Number',

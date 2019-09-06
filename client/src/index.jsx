@@ -9,4 +9,4 @@ WebFont.load({
     }
   });
 
-ReactDOM.render(<App />, document.getElementById('photogallery')); 
+// ReactDOM.render(<App />, document.getElementById('photogallery')); 
