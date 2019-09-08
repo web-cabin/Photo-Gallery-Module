@@ -4,46 +4,59 @@ import $ from 'jquery';
 import PhotoSlideShow from './PhotoSlideShow.jsx';
 import ThumbnailGallery from './ThumbnailGallery.jsx';
 import Descriptions from './Descriptions.jsx'; 
-import styled from 'styled-components'
 
-const ThumbnailContainer = styled.div`
+const ThumbnailDescriptionContainer = styled.div`
     position: relative; 
-    max-width: 325px;
+    max-width: 25%;
     overflow: hidden;
     margin: 0 auto;
     white-space: nowrap;
     float: right;
-    top: 160px;
-    right: 40px;
-`;
+    top: 180px;
+    right: 2%;
+    `;
+    
+// const DescriptionContainer = styled.div`
+//       position: relative;
+//       height: 300px;
+//       width: 300px;
+//       overflow: hidden;
+//       margin: 0 auto;
+//       top: 200px;
+//       right: 25px;
+//       border: 2px solid red; 
+//     `;
 
 const SliderContainer = styled.div`
   display: flex;
+  flex-direction: row; 
+  position: relative;
   margin: 0 auto;
   overflow: hidden;
   white-space: nowrap;
-  width: 785px;
+  max-width: 785px
+  height: 100%;
   float: left;
-  margin: 130px;
+`;
+
+const SliderArrowContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  height: 100%;
+  width: 70%;
+  left: 0%;
+  top: 15%;
 `;
 
 
-const DescriptionContainer = styled.div`
-  position: relative;
-  height: 300px;
-  width: 300px;
-  overflow: hidden;
-  margin: 0 auto;
-  top: 200px;
-  right: 25px;
-`;
 
 const Button = styled.a`
     position: absolute;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
-    height: 22px;
+    height: 24px;
     font-weight: 500;
     color: #484848;
     border-radius: 3px;
@@ -51,9 +64,9 @@ const Button = styled.a`
     margin: 0.5rem 1rem;
     width: 7rem;
     background: white;
-    z-index: 2;
+    z-index: 3;
     right: 1%;
-    top: 61%;
+    top: 50%;
     text-align: center;
     border-radius: 4px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -70,14 +83,51 @@ const ExitButton = styled.div`
     transition: transform ease-in .1s;
     position: absolute;
     top: 7%;
-    right: 50px;
+    float: right;
+    right: 2%;
     z-index: 999;
     color: #fff;
     background-image: url('https://photogalleryproject.s3.us-east-2.amazonaws.com/ExitButton.png
     ');
-    `;
+`;
 
 
+export const BackArrow = styled.div`
+    display: flex;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: transform ease-in .1s;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    z-index: 999;
+    color: #fff;
+    background-image: url('https://photogalleryproject.s3.us-east-2.amazonaws.com/backarrow.png');
+`;
+    
+
+export const NextArrow = styled.div`
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform ease-in .1s;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    z-index: 999;
+    color: #fff;
+    background-image: url('https://photogalleryproject.s3.us-east-2.amazonaws.com/nextarrow.png');
+`;
+    
 
 
 class App extends React.Component {
@@ -115,7 +165,8 @@ componentDidMount() {
 fetchPhotos() {
     const id = 71;
     $.ajax({
-        url: `http://localhost:3000/api/listings/71`,
+        // url: `http://3.14.180.61:3000/api/listings/71`,
+        url: `http://localhost:4000/api/listings/71`,
         method: 'GET',
         success: (response) => {
             // array.toString().split(',');
@@ -214,17 +265,8 @@ handleClick(event) {
             <div className="container">
                 {this.state.showSlideshow || this.state.renderPhotoGallery ? 
                 <div>
-                <ThumbnailContainer>
-                <ThumbnailGallery 
-                photos={this.state.photos} 
-                index={this.state.currentIndex}
-                translateValue={this.state.translateThumbnailValue}
-                goToPrevSlide={this.goToPrevSlide}
-                goToNextSlide={this.goToNextSlide}
-                thumbnailWidth={this.thumbnailWidth}
-                handleClick={this.handleClick}
-                />
-                </ThumbnailContainer>
+                    <SliderArrowContainer>
+                <LeftArrow  index={this.state.currentIndex} handleClick={this.handleClick}/>
 
                 <SliderContainer>
                 <PhotoSlideShow 
@@ -236,10 +278,27 @@ handleClick(event) {
                 slideWidth={this.slideWidth}
                 handleClick={this.handleClick}
                 />
-                <ExitButton onClick={this.handleExitClick}/>
                 </SliderContainer>
 
-                <DescriptionContainer>        
+                <RightArrow index={this.state.currentIndex} handleClick={this.handleClick}/>
+                </SliderArrowContainer> 
+                <ExitButton onClick={this.handleExitClick}/>
+                
+                <ThumbnailDescriptionContainer>
+                <ThumbnailGallery 
+                photos={this.state.photos} 
+                index={this.state.currentIndex}
+                translateValue={this.state.translateThumbnailValue}
+                goToPrevSlide={this.goToPrevSlide}
+                goToNextSlide={this.goToNextSlide}
+                thumbnailWidth={this.thumbnailWidth}
+                handleClick={this.handleClick}
+                />       
+                <br /> 
+                <br /> 
+                <br />
+                <br /> 
+                <br /> 
                 <Descriptions 
                 descriptions={this.state.descriptions}
                 photos={this.state.photos} 
@@ -248,7 +307,7 @@ handleClick(event) {
                 goToNextSlide={this.goToNextSlide} 
                 handleClick={this.handleClick}
                 />
-                </DescriptionContainer>
+                </ThumbnailDescriptionContainer>
                 </div>
                 : 
                 <div>
@@ -260,5 +319,20 @@ handleClick(event) {
     }
 }
 
+
+const LeftArrow = ({ handleClick, index }) => {
+    return (
+      <BackArrow className="back-arrow" onClick={() => handleClick(index - 1)} >
+      </BackArrow>
+    );
+  }
+  
+  
+const RightArrow = ({ handleClick, index }) => {
+    return (
+      <NextArrow className="next-arrow"  onClick={() => handleClick(index + 1)} >
+      </NextArrow>
+    );
+  }
 
 export default App; 

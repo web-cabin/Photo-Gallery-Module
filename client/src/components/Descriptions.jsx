@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components' 
 
 const IndexTrackerWrapper = styled.div`
   font-family: 'Montserrat', sans-serif;
@@ -10,9 +9,10 @@ const IndexTrackerWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
-  position: relative;
+  position: inline-block;
   height: 100%;
   width: 100%;
+  right: 10%;
   font-family: 'Montserrat', sans-serif;
   color: #484848;
   font-weight: 100;

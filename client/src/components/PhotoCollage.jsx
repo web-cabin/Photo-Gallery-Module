@@ -1,8 +1,11 @@
 import React from 'react';
-import styled from 'styled-components'
 
 
 const Container = styled.div`
+    display: flex;
+    width: 100%;
+    height: 25%;
+
     &: hover #image:not(:hover) {
         background-color: #000;
         filter: brightness(50%);
@@ -15,8 +18,8 @@ const ImageOne = styled.img`
     left: 0%;
     position: absolute;
     transform: scale(1);
-    height: 478px;
-    width: 720px; 
+    height: 50%
+    width: 50%; 
     box-sizing: border-box;
     cursor: pointer;
     border: solid 1px black;
@@ -30,8 +33,8 @@ const ImageTwo = styled.img`
     transform: scale(1);
     left: 50%;
     top: 10%;
-    height: 239px;
-    width: 360px; 
+    height: 25%;
+    width: 25%; 
     box-sizing: border-box;
     cursor: pointer;
     border: solid 1px black;
@@ -45,12 +48,12 @@ const ImageThree = styled.img`
     transform: scale(1);
     top: 10%;
     right: 0%;
-    height: 239px;
-    width: 360px; 
+    height: 25%;
+    width: 25%; 
     box-sizing: border-box;
     cursor: pointer;
     border: solid 1px black;
-    z-index: 1; 
+    z-index: -1; 
     transition: transform .4s;  
 `;
 
@@ -59,13 +62,13 @@ const ImageFour = styled.img`
     position: absolute;
     transform: scale(1);
     left: 50%;
-    top: 40%;
-    height: 239px;
-    width: 360px; 
+    top: 35%;
+    height: 25%;
+    width: 25%; 
     box-sizing: border-box;
     cursor: pointer;
     border: solid 1px black;
-    z-index: 1; 
+    z-index: -1; 
     transition: transform .4s;  
 `;
 
@@ -74,13 +77,13 @@ const ImageFive = styled.img`
     position: absolute;
     transform: scale(1);
     right: 0%;
-    top: 40%;
-    height: 239px;
-    width: 360px; 
+    top: 35%;
+    height: 25%;
+    width: 25%; 
     box-sizing: border-box;
     cursor: pointer;
     border: solid 1px black;
-    z-index: 1; 
+    z-index: -1; 
     transition: transform .4s;  
 `;
 
@@ -88,13 +91,13 @@ const NavBar = styled.img`
     display: inline-block;
     position: absolute;
     top: 0%;
-    left: 0%;
+    left: 5%;
 `;
 
 const ListingInfo = styled.img`
     display: inline-block;
     position: absolute;
-    top: 71%;
+    top: 65%;
     left: 12%;
 `;
 

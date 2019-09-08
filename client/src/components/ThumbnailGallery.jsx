@@ -1,10 +1,12 @@
 import React from 'react';
-import styled from 'styled-components'
 
 const ThumbnailWrapper = styled.div`
-    position: relative;
+    position: relative; 
+    flex-direction:row;
     height: 100%;
     width: 100%; 
+    top: 10%;
+    right: 5%;
 `;
 
 export const Thumbnail = styled.div`
@@ -14,7 +16,6 @@ export const Thumbnail = styled.div`
     border-radius: 5px;
     margin: 7px;
     padding: 5px;
-    top: 120px;
 `;
 
 
