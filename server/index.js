@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-const port = 4000;
+const port = 3000;
 const compression = require('compression');
 const bodyParser = require('body-parser');
 const axios = require('axios');
