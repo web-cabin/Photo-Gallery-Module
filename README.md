@@ -1,13 +1,10 @@
-# Project Name
+# Photo Carousel - Web Cabin
 
-> Project description
+<p align='center'>
+  <img src="https://github.com/Web-Cabin/Photo-Gallery-Module/blob/master/photogallery-demo.gif" width="700px" align="center"/>
+</p>  
 
-## Related Projects
-
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+> Photo gallery module for a private lodging platform. Built with React and Node.js. Displays an interactive photo carousel. Utilizes Mongo and Mongoose for database management and Express for server handling. 
 
 ## Table of Contents
 
@@ -17,14 +14,11 @@
 
 ## Usage
 
-> Some usage instructions
+> Click on photo collage or "view photos" to view the photo gallery and thumbnail slideshows. Click on the thumbails or left and right buttons to see the previous or next image. Click on the exit button to return back to the photo collage. 
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
+- Node 8.16.0 or higher 
 
 ## Development
 
@@ -33,7 +27,11 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
 npm install
+npm run react-dev
+npm run start 
+npm run seed
 ```
+
+
 
