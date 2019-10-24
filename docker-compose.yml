@@ -2,7 +2,7 @@ version: '3'
 
 services:
   photogallery:
-    build: .
+    image: wendywu09/photogallery:version1.6
     depends_on:
       - 'database'
     ports: 

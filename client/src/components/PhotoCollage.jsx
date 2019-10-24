@@ -101,17 +101,25 @@ const ListingInfo = styled.img`
     left: 12%;
 `;
 
+const WebCabinLogo = styled.img`
+    position: absolute;
+    top: 0%;
+    left: 5%
+    height: 60px;
+    width: 60px;
+`;
 
 const PhotoCollage = ({ photos, renderCarousel }) => {
     return (
         <Container>
-        <NavBar src={`https://photogalleryproject.s3.us-east-2.amazonaws.com/NavBar.png`} />
+        <NavBar src={'https://photogalleryproject.s3.us-east-2.amazonaws.com/NavBar.png'} />
+        <WebCabinLogo src={'https://photogalleryproject.s3.us-east-2.amazonaws.com/WebCabinLogo.png'} />
         <ImageOne  src={`${photos[0]}`} id="image" onClick={() => renderCarousel()}/>
         <ImageTwo src={`${photos[1]}`} id="image" onClick={() => renderCarousel()} />
         <ImageThree src={`${photos[2]}`} id="image" onClick={() => renderCarousel()} />
         <ImageFour src={`${photos[3]}`} id="image" onClick={() => renderCarousel()} />
         <ImageFive src={`${photos[4]}`} id="image" onClick={() => renderCarousel()} />
-        <ListingInfo src={`https://photogalleryproject.s3.us-east-2.amazonaws.com/ListingInfo.png`} />
+        <ListingInfo src={'https://photogalleryproject.s3.us-east-2.amazonaws.com/ListingInfo.png'} />
         </Container>
     );
 }

@@ -165,8 +165,8 @@ componentDidMount() {
 fetchPhotos() {
     const id = 71;
     $.ajax({
-        url: `http://3.14.180.61:3000/api/listings/71`,
-        // url: `http://localhost:4000/api/listings/71`,
+        url: `http://localhost:3000/api/listings/71`,
+        // url: `http://localhost:3000/api/listings/71`,
         method: 'GET',
         success: (response) => {
             // array.toString().split(',');
