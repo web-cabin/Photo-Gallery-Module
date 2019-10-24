@@ -103,7 +103,7 @@ const ListingInfo = styled.img`
 
 const WebCabinLogo = styled.img`
     position: absolute;
-    top: 0%;
+    top: 1%;
     left: 5%
     height: 60px;
     width: 60px;
