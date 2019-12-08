@@ -15,17 +15,6 @@ const ThumbnailDescriptionContainer = styled.div`
     top: 180px;
     right: 2%;
     `;
-    
-// const DescriptionContainer = styled.div`
-//       position: relative;
-//       height: 300px;
-//       width: 300px;
-//       overflow: hidden;
-//       margin: 0 auto;
-//       top: 200px;
-//       right: 25px;
-//       border: 2px solid red; 
-//     `;
 
 const SliderContainer = styled.div`
   display: flex;
@@ -161,17 +150,12 @@ componentDidMount() {
     this.fetchPhotos();
 }
 
-// 
 fetchPhotos() {
     const id = 71;
     $.ajax({
         url: `http://localhost:3000/api/listings/71`,
-        // url: `http://localhost:3000/api/listings/71`,
         method: 'GET',
         success: (response) => {
-            // array.toString().split(',');
-            console.log(response[0].description);
-            console.log(response[0].photo_url.toString().split(','));
             this.setState({
                 photos: response[0].photo_url.toString().split(','),
                 descriptions: response[0].description,
@@ -294,11 +278,7 @@ handleClick(event) {
                 thumbnailWidth={this.thumbnailWidth}
                 handleClick={this.handleClick}
                 />       
-                <br /> 
-                <br /> 
-                <br />
-                <br /> 
-                <br /> 
+         
                 <Descriptions 
                 descriptions={this.state.descriptions}
                 photos={this.state.photos} 
