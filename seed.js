@@ -21,10 +21,7 @@ const insertIntoDb = () => {
     let arrayOfDescriptions = [];
     for (let i = 0; i < randomNumOfPhotos; i++) {
       arrayOfDescriptions.push(faker.lorem.sentence());
-    }
-    console.log(arrayOfDescriptions);
-    // arrayOfDescriptions = arrayOfDescriptions.reduce((acc, val) => acc.concat(val), []).join();
-    
+    }  
 
     let newPhotos = new database.PhotoGallery({
       id: index,
