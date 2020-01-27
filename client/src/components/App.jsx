@@ -16,7 +16,7 @@ const ThumbnailDescriptionContainer = styled.div`
     float: right;
     top: 180px;
     right: 2%;
-    `;
+`;
 
 const SliderContainer = styled.div`
   display: flex;
