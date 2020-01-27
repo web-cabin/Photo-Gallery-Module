@@ -20,18 +20,16 @@ const DescriptionWrapper = styled.div`
   font-size: 16px;
 `;
 
-
-
 const Descriptions = (props) => {
   return (
       <div>
           <DescriptionWrapper>
-          <IndexTrackerWrapper>
-          {`${props.index + 1}/${props.descriptions.length}`}
-          </IndexTrackerWrapper>
-          <br />
-          <br />
-          { props.descriptions[props.index] }
+            <IndexTrackerWrapper>
+              {`${props.index + 1}/${props.descriptions.length}`}
+           </IndexTrackerWrapper>
+            <br />
+            <br />
+              {props.descriptions[props.index]}
           </DescriptionWrapper>
       </div>
   );

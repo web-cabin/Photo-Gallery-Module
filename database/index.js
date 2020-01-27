@@ -13,7 +13,6 @@ let PhotoGallery = mongoose.model('PhotoGallery', PhotoSchema);
 
 console.log('Connected to Mongoose');
 
-
 module.exports = {
   PhotoSchema: PhotoSchema,
   PhotoGallery: PhotoGallery,

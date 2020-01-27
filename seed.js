@@ -3,8 +3,6 @@ const database = require('./database/index.js');
 
 const faker = require('faker');
 
-//use a while loop and then use index to track 
-//loop through 4 times to get 100 and have a row 
 const insertIntoDb = () => {
   let index = 1; 
   let randomSentence = faker.lorem.sentence(); 
@@ -29,6 +27,7 @@ const insertIntoDb = () => {
       photo_url: arrayOfURLs,
       description: arrayOfDescriptions,
     });
+    
     database.PhotoGallery.create({
       id: index,
       listing_id: index,
@@ -38,7 +37,6 @@ const insertIntoDb = () => {
         if (err) console.log(err);
     });
     index++;    
-    console.log(index);
   }
 };
 

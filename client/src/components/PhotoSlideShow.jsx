@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { Component } from 'react';
 
 const Container = styled.div`
   display: flex;
@@ -12,7 +11,7 @@ const SliderWrapper = styled.div`
   overflow: hidden;
 `;
 
-export const Slide = styled.div`
+const Slide = styled.div`
   display: inline-block;
   height: 525px;
   width: 785px;
@@ -21,18 +20,16 @@ export const Slide = styled.div`
 `;
 
 
-class PhotoSlideShow extends React.Component {
+class PhotoSlideShow extends Component {
   constructor(props) {
       super(props);
-      
       this.state = {
         translateValue: 0
       }
   }
-  
-    render() {
-      return (
-          <Container>
+  render() {
+    return (
+        <Container>
           <SliderWrapper style={{
               transform: `translateX(${this.props.translateValue}px)`,
               transition: 'transform ease 0.25s'
@@ -40,18 +37,18 @@ class PhotoSlideShow extends React.Component {
               {
                 this.props.photos.map((photo, i) => (
                   <Slide className="slide" key={i} style={{
-                  backgroundImage: `url(${photo})`,
-                  backgroundSize:'cover',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: '50% 60%'}} />
+                    backgroundImage: `url(${photo})`,
+                    backgroundSize:'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: '50% 60%'}} 
+                  />
                 ))
               }
           </SliderWrapper>
-
-         </Container>
-      );
-    }
+        </Container>
+    );
   }
+}
 
 export default PhotoSlideShow;
 
