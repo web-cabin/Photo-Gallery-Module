@@ -28,7 +28,7 @@
     "cors": "^2.8.5",
     "css-loader": "^3.2.0",
     "enzyme-to-json": "^3.4.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "faker": "^4.1.0",
     "jest-styled-components": "^6.3.3",
     "jquery": "^3.4.1",
